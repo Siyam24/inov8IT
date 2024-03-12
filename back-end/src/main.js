@@ -32,7 +32,7 @@ app.post('/api/login', (req, res) => {
 
     // Query to check username and password
     connection.query(
-        'SELECT * FROM tblUser WHERE userName = ? AND userPassword = ?', [username, password],
+        'SELECT role FROM tblUser WHERE userName = ? AND userPassword = ?', [username, password],
         (error, results, fields) => {
             if (error) {
                 console.error('Error fetching data:', error);
