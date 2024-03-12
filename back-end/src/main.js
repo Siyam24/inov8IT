@@ -1,17 +1,12 @@
 const express = require('express');
 const mysql = require('mysql');
+const configs = require('./config.js')
 
 const app = express();
 app.use(express.json()); // Middleware to parse JSON requests
 
 // MySQL connection configuration
-const connection = mysql.createConnection({
-    host: 'enqhzd10cxh7hv2e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-    user: 'lnglvlatb6faflvw',
-    password: 'qglb8lww01godyk9',
-    database: 'r9a7f0kkwaquhndi',
-    port: 3306
-});
+const connection = mysql.createConnection(configs);
 
 // Connect to MySQL
 connection.connect((err) => {
@@ -32,7 +27,7 @@ app.post('/api/login', (req, res) => {
 
     // Query to check username and password
     connection.query(
-        'SELECT role FROM tblUser WHERE userName = ? AND userPassword = ?', [username, password],
+        'SELECT * FROM tblUser WHERE userName = ? AND userPassword = ?', [username, password],
         (error, results, fields) => {
             if (error) {
                 console.error('Error fetching data:', error);
@@ -43,8 +38,9 @@ app.post('/api/login', (req, res) => {
                 return res.status(401).json({ error: 'Invalid username or password' });
             }
 
-            // Send success response
-            res.json({ message: 'Login successful', user: results[0] });
+            // Send success response and role of user 
+            // as admin for now
+            res.json({ message: 'Login successful', user: results[0].role });
         }
     );
 });
