@@ -30,8 +30,8 @@
             </Pane>
             <MenuButton alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="28.0" prefWidth="185.0" style="-fx-background-color: #ffffff;" text="Transactions">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#gtransaction" text="Gold Transaction" />
-                <MenuItem mnemonicParsing="false" onAction="#ctransaction" text="Cash Transaction" />
+                <MenuItem mnemonicParsing="false"  text="Gold Transaction" />
+                <MenuItem mnemonicParsing="false"  text="Cash Transaction" />
               </items>
                <font>
                   <Font name="Baloo Tammudu 2 Medium" size="14.0" />
