@@ -1,10 +1,11 @@
-module org.example.sujithajewellerymanagement {
+module org.example.goldmanagementsystem {
     requires javafx.controls;
     requires javafx.fxml;
 
-    requires com.dlsc.formsfx;
-    requires java.sql;
 
-    opens org.example.sujithajewellerymanagement to javafx.fxml;
-    exports org.example.sujithajewellerymanagement;
+    opens org.example.goldmanagementsystem to javafx.fxml;
+
+
+
+    exports org.example.goldmanagementsystem;
 }
