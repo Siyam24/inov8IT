@@ -16,7 +16,9 @@ public class Employee {
     private int empSalary;
     private String empAddress;
 
+
     public Employee( String empName, String empNIC, String empContact, String empEmail, int empSalary, String empAddress) {
+
         this.empName = empName;
         this.empNIC = empNIC;
         this.empContact = empContact;
@@ -25,7 +27,12 @@ public class Employee {
         this.empAddress = empAddress;
     }
 
-    // Getters and setters
+    public Employee() {
+
+    }
+
+
+// Getters and setters
     // Add your getters and setters here
 
     // Add employee to the database
@@ -181,5 +188,9 @@ public class Employee {
 
     public String getEmpAddress() {
         return empAddress;
+    }
+
+    public void setEmpId(int empId) {
+        this.empId = empId;
     }
 }

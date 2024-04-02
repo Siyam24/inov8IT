@@ -23,4 +23,10 @@ public class EmployeeData {
         // Call the static method from the Employee class
         return Employee.getAllEmployees();
     }
+    public void removeEmployee(int empId) {
+        // Create an instance of Employee and call the removeEmployee method
+        Employee employee = new Employee();
+        employee.setEmpId(empId); // Set the ID of the employee to be removed
+        employee.removeEmployee(); // Call the removeEmployee method
+    }
 }
