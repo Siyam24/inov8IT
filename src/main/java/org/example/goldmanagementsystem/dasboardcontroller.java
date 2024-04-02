@@ -21,6 +21,11 @@ import javafx.stage.StageStyle;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 import java.net.URL;
 import java.util.Optional;
@@ -219,100 +224,13 @@ public class dasboardcontroller implements Initializable {
     @FXML
     private ToggleGroup update;
 
-    /*public void switchform(ActionEvent event){
 
-        if(event.getSource()==dasboardbtn){
-            Dashboard_form.setVisible(true);
-            Transactionnew_form.setVisible(false);
-            MasterdataManagementform.setVisible(false);
-            oderform.setVisible(false);
-            billing_form.setVisible(false);
-            payroll_form.setVisible(false);
-            analytics_form.setVisible(false);
-            inquiry_form.setVisible(false);
 
-        }
-        else if(event.getSource()==transactionnewbtn){
-            Dashboard_form.setVisible(false);
-            Transactionnew_form.setVisible(true);
-            MasterdataManagementform.setVisible(false);
-            oderform.setVisible(false);
-            billing_form.setVisible(false);
-            payroll_form.setVisible(false);
-            analytics_form.setVisible(false);
-            inquiry_form.setVisible(false);
-        }
-        else if(event.getSource()==masterdatamanagementbtn){
-            Dashboard_form.setVisible(false);
-            Transactionnew_form.setVisible(false);
-            MasterdataManagementform.setVisible(true);
-            oderform.setVisible(false);
-            billing_form.setVisible(false);
-            payroll_form.setVisible(false);
-            analytics_form.setVisible(false);
-            inquiry_form.setVisible(false);
-        }
-        else if(event.getSource()==ordermanagementbtn){
-            Dashboard_form.setVisible(false);
-            Transactionnew_form.setVisible(false);
-            MasterdataManagementform.setVisible(false);
-            oderform.setVisible(true);
-            billing_form.setVisible(false);
-            payroll_form.setVisible(false);
-            analytics_form.setVisible(false);
-            inquiry_form.setVisible(false);
-        }
-        else if(event.getSource()==billingbtn){
-            Dashboard_form.setVisible(false);
-            Transactionnew_form.setVisible(false);
-            MasterdataManagementform.setVisible(false);
-            oderform.setVisible(false);
-            billing_form.setVisible(true);
-            payroll_form.setVisible(false);
-            analytics_form.setVisible(false);
-            inquiry_form.setVisible(false);
-        }
-        else if(event.getSource()==payrollbtn){
-            Dashboard_form.setVisible(false);
-            Transactionnew_form.setVisible(false);
-            MasterdataManagementform.setVisible(false);
-            oderform.setVisible(false);
-            billing_form.setVisible(false);
-            payroll_form.setVisible(true);
-            analytics_form.setVisible(false);
-            inquiry_form.setVisible(false);
-        }
-        else if(event.getSource()==analyticsbtn){
-            Dashboard_form.setVisible(false);
-            Transactionnew_form.setVisible(false);
-            MasterdataManagementform.setVisible(false);
-            oderform.setVisible(false);
-            billing_form.setVisible(false);
-            payroll_form.setVisible(false);
-            analytics_form.setVisible(true);
-            inquiry_form.setVisible(false);
-        }
-        else if(event.getSource()==inquirybtn){
-            Dashboard_form.setVisible(false);
-            Transactionnew_form.setVisible(false);
-            MasterdataManagementform.setVisible(false);
-            oderform.setVisible(false);
-            billing_form.setVisible(false);
-            payroll_form.setVisible(false);
-            analytics_form.setVisible(false);
-            inquiry_form.setVisible(true);
-        }
-        else if(event.getSource()==p_allowancebtn){
-            Dashboard_form.setVisible(false);
-            Transactionnew_form.setVisible(false);
-            MasterdataManagementform.setVisible(false);
-            oderform.setVisible(false);
-            billing_form.setVisible(false);
-            payroll_form.setVisible(false);
-            analytics_form.setVisible(false);
-            inquiry_form.setVisible(false);
-            allowances_form.setVisible(true);
-        }
+   /* public ObservableList<employeeData> addEmployeeListData(){
+
+        ObservableList<employeeData> listData=FXCollections.observableArrayList();
+        String sql="SELECT * FROM employee";
+
 
     }*/
 
