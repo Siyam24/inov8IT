@@ -1,5 +1,9 @@
 package org.example.goldmanagementsystem;
 
+import javafx.beans.Observable;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +14,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
 import java.net.URL;
 import java.util.Optional;
@@ -22,16 +31,79 @@ public class dasboardcontroller implements Initializable {
 
 
     @FXML
+    private ToggleGroup Cash;
+
+    @FXML
     private AnchorPane Dashboard_form;
+
+    @FXML
+    private ToggleGroup Deduction;
+
+    @FXML
+    private TableColumn<?, ?> Emp_Det_Col_Address;
+
+    @FXML
+    private TableColumn<?, ?> Emp_Det_Col_Email;
+
+    @FXML
+    private TableColumn<?, ?> Emp_Det_Col_Empname;
+
+    @FXML
+    private TableColumn<?, ?> Emp_Det_Col_NICno;
+
+    @FXML
+    private TableColumn<?, ?> Emp_Det_Col_Salary;
+
+    @FXML
+    private TableColumn<?, ?> Emp_Det_Col_TelNo;
+
+    @FXML
+    private TextField Emp_Det_TX_Address;
+
+    @FXML
+    private TextField Emp_Det_TX_Email;
+
+    @FXML
+    private TextField Emp_Det_TX_Empname;
+
+    @FXML
+    private TextField Emp_Det_TX_NICNo;
+
+    @FXML
+    private TextField Emp_Det_TX_Salary;
+
+    @FXML
+    private TextField Emp_Det_TX_TelNo;
+
+    @FXML
+    private Button Emp_Det_btn_Clear;
+
+    @FXML
+    private Button Emp_Det_btn_Update;
+
+    @FXML
+    private Button Emp_Det_btn_add;
+
+    @FXML
+    private Button Emp_Det_btn_delete;
+
+    @FXML
+    private TextField Emp_det_search;
 
     @FXML
     private AnchorPane Employee_form;
 
     @FXML
-    private AnchorPane Gold_TransactionsForm;
+    private ToggleGroup Gold;
 
     @FXML
     private AnchorPane MasterdataManagementform;
+
+    @FXML
+    private ToggleGroup Opening_balance;
+
+    @FXML
+    private ToggleGroup Opening_balance1;
 
     @FXML
     private AnchorPane Transactionnew_form;
@@ -139,7 +211,14 @@ public class dasboardcontroller implements Initializable {
     private AnchorPane salaryincrement_form;
 
     @FXML
+    private Button signout;
+
+    @FXML
     private Button transactionnewbtn;
+
+    @FXML
+    private ToggleGroup update;
+
     /*public void switchform(ActionEvent event){
 
         if(event.getSource()==dasboardbtn){
@@ -237,11 +316,13 @@ public class dasboardcontroller implements Initializable {
 
     }*/
 
+
     public void close(){
         System.exit(0);
     }
 
-
+    private double x=0;
+    private double y=0;
 
 public void logout(){
     try{
@@ -251,12 +332,32 @@ public void logout(){
         alert.setContentText("Are You Sure You Want to Logout?");
         Optional<ButtonType> option=alert.showAndWait();
 
-        if(option.equals(ButtonType.OK)){
+        if(option.get().equals(ButtonType.OK)){
+
+            signout.getScene().getWindow().hide();
 
 
             Parent root= FXMLLoader.load(getClass().getResource("hello-view.fxml"));
             Stage stage=new Stage();
             Scene scene=new Scene(root);
+
+
+
+            root. setOnMousePressed ( (MouseEvent event) -> {
+                x = event.getSceneX();
+                y = event.getSceneY();
+            });
+                root. setOnMouseDragged ( (MouseEvent event) -> {
+                    stage.setX(event.getScreenX() - x);
+                    stage.setY(event.getScreenY() - y);
+
+                    stage.setOpacity(.8f);
+                });
+                    root. setOnMouseReleased ( (MouseEvent event) ->{
+                        stage. setOpacity (1);
+                    });
+
+            stage.initStyle(StageStyle.TRANSPARENT);
 
             stage.setScene(scene);
             stage.show();

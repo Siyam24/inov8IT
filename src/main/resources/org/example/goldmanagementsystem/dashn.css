@@ -79,16 +79,16 @@
     -fx-background-color: white;
     -fx-border-color: #10a197;
     -fx-border-width: 5px;
-    -fx-border-radius: 8px;
+
     -fx-padding: 0px;
 }
-.table-view.table-column{
+.table-view .table-column{
     -fx-alignment: Center;
 }
-.table-view.column-header-background{
+.table-view .column-header-background{
     -fx-background-color: #10a197;
     -fx-background-insets: 0 0 0 0;
-    -fx-background-radius: 8px 8px 0px 0px;
+    -fx-background-radius: 6px 6px 0px 0px;
 }
 .table-view.column-header, .filter{
     -fx-size:40px;

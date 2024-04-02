@@ -10,6 +10,9 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
 
+    private double x=0;
+    private double y=0;
+
     private static Stage stg;
     @Override
     public void start(Stage stage) throws IOException {
@@ -18,6 +21,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/goldmanagementsystem/hello-view.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+
         stage.setTitle("Sujitha Jewellery");
         stage.setScene(scene);
         stage.show();
