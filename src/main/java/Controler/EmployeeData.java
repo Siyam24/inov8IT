@@ -29,4 +29,12 @@ public class EmployeeData {
         employee.setEmpId(empId); // Set the ID of the employee to be removed
         employee.removeEmployee(); // Call the removeEmployee method
     }
+
+    public Employee getEmployeeById(int empId){
+        Employee employee = new Employee();
+        Employee emp =employee.getEmployeeById(empId);
+        return emp;
+    }
+
+
 }
