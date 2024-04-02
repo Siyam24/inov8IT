@@ -26,10 +26,21 @@ public class Employee {
         this.empSalary = empSalary;
         this.empAddress = empAddress;
     }
+    public Employee( int empID,String empName, String empNIC, String empContact, String empEmail, int empSalary, String empAddress) {
+        this.empId=empID;
+        this.empName = empName;
+        this.empNIC = empNIC;
+        this.empContact = empContact;
+        this.empEmail = empEmail;
+        this.empSalary = empSalary;
+        this.empAddress = empAddress;
+    }
 
     public Employee() {
 
     }
+
+
 
 
 // Getters and setters
@@ -129,7 +140,7 @@ public class Employee {
 
             // Process result set
             while (resultSet.next()) {
-                int empId = resultSet.getInt("empId");
+                int empID = resultSet.getInt("empId");
                 String empName = resultSet.getString("empName");
                 String empNIC = resultSet.getString("empNIC");
                 String empContact = resultSet.getString("empContact");
@@ -137,7 +148,7 @@ public class Employee {
                 int empSalary = resultSet.getInt("empSalary");
                 String empAddress = resultSet.getString("empAddress");
 
-                Employee employee = new Employee( empName, empNIC, empContact, empEmail, empSalary, empAddress);
+                Employee employee = new Employee(empID, empName, empNIC, empContact, empEmail, empSalary, empAddress);
                 employees.add(employee);
             }
         } catch (SQLException e) {
@@ -160,6 +171,59 @@ public class Employee {
         }
 
         return employees;
+    }
+    public static Employee getEmployeeById(int empId) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        Employee employee = null;
+
+        try {
+            // Get connection
+            connection = databaseConnection.getConnection();
+
+            // Prepare SQL statement
+            String sql = "SELECT * FROM employee WHERE empId=?";
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, empId);
+
+            // Execute query
+            resultSet = statement.executeQuery();
+
+            // Check if the result set has data
+            if (resultSet.next()) {
+                // Retrieve employee data from the result set
+                int empID = resultSet.getInt("empID");
+                String empName = resultSet.getString("empName");
+                String empNIC = resultSet.getString("empNIC");
+                String empContact = resultSet.getString("empContact");
+                String empEmail = resultSet.getString("empEmail");
+                int empSalary = resultSet.getInt("empSalary");
+                String empAddress = resultSet.getString("empAddress");
+
+                // Create an Employee object with the retrieved data
+                employee = new Employee(empID, empName, empNIC, empContact, empEmail, empSalary, empAddress);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Close resources
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return employee;
     }
 
     public int getEmpId() {
