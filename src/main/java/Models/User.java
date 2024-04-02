@@ -17,11 +17,11 @@ public class User {
     // Getter methods for username and password (you can add setters if needed)
 
     // Method to validate user login
-    public boolean login() {
+    public static boolean login(String username, String password) {
         // Establish database connection
-        try (Connection connection = DbConfig.getConnection()) {
+        try (Connection connection = databaseConnection.getConnection()) {
             // Create SQL query to check if username and password match
-            String sql = "SELECT * FROM tblUser WHERE userName = ? AND userPassword = ?";
+            String sql = "SELECT * FROM user WHERE username = ? AND password = ?";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, username);
                 statement.setString(2, password);
@@ -36,4 +36,3 @@ public class User {
         }
     }
 }
-
