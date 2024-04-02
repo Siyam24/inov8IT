@@ -5,9 +5,9 @@ import Models.Employee;
 import java.util.List;
 
 public class EmployeeData {
-    // No need to store employee data as class fields
 
-    // Constructor can be simplified or removed
+
+
 
     // Method to add employee
     public void addEmployee( String empName, String empNIC, String empContact, String empEmail, int empSalary, String empAddress){
