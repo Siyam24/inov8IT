@@ -2,7 +2,10 @@ package Models;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Employee {
     private int empId;
@@ -10,10 +13,10 @@ public class Employee {
     private String empNIC;
     private String empContact;
     private String empEmail;
-    private String empSalary;
+    private int empSalary;
     private String empAddress;
 
-    public Employee( String empName, String empNIC, String empContact, String empEmail, String empSalary, String empAddress) {
+    public Employee( String empName, String empNIC, String empContact, String empEmail, int empSalary, String empAddress) {
         this.empName = empName;
         this.empNIC = empNIC;
         this.empContact = empContact;
@@ -43,7 +46,7 @@ public class Employee {
             statement.setString(2, this.empNIC);
             statement.setString(3, this.empContact);
             statement.setString(4, this.empEmail);
-            statement.setString(5, this.empSalary);
+            statement.setInt(5, this.empSalary);
             statement.setString(6, this.empAddress);
 
             // Execute query
@@ -98,6 +101,85 @@ public class Employee {
                 e.printStackTrace();
             }
         }
+
+    }
+    public static List<Employee> getAllEmployees() {
+        List<Employee> employees = new ArrayList<>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            // Get connection
+            connection = databaseConnection.getConnection();
+
+            // Prepare SQL statement
+            String sql = "SELECT * FROM employee";
+            statement = connection.prepareStatement(sql);
+
+            // Execute query
+            resultSet = statement.executeQuery();
+
+            // Process result set
+            while (resultSet.next()) {
+                int empId = resultSet.getInt("empId");
+                String empName = resultSet.getString("empName");
+                String empNIC = resultSet.getString("empNIC");
+                String empContact = resultSet.getString("empContact");
+                String empEmail = resultSet.getString("empEmail");
+                int empSalary = resultSet.getInt("empSalary");
+                String empAddress = resultSet.getString("empAddress");
+
+                Employee employee = new Employee( empName, empNIC, empContact, empEmail, empSalary, empAddress);
+                employees.add(employee);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Close resources
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return employees;
     }
 
+    public int getEmpId() {
+        return empId;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public String getEmpNIC() {
+        return empNIC;
+    }
+
+    public String getEmpContact() {
+        return empContact;
+    }
+
+    public String getEmpEmail() {
+        return empEmail;
+    }
+
+    public int getEmpSalary() {
+        return empSalary;
+    }
+
+    public String getEmpAddress() {
+        return empAddress;
+    }
 }
