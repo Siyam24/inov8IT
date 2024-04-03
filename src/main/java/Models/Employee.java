@@ -43,8 +43,7 @@ public class Employee {
 
 
 
-// Getters and setters
-    // Add your getters and setters here
+
 
     // Add employee to the database
     public void addEmployee() {

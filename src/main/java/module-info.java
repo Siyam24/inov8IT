@@ -5,6 +5,7 @@ module org.example.goldmanagementsystem {
 
 
     opens org.example.goldmanagementsystem to javafx.fxml;
+    opens Models to javafx.base;
 
 
 
