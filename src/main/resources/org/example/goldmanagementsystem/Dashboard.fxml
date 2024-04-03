@@ -1057,7 +1057,7 @@
                                 </columns>
                               </TableView>
                               <TextField fx:id="Emp_Det_TX_Salary" layoutX="620.0" layoutY="182.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Button fx:id="Emp_Det_btn_add" layoutX="488.0" layoutY="262.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
+                              <Button fx:id="Emp_Det_btn_add" layoutX="488.0" layoutY="262.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" onAction="#addEmp" />
                               <Button fx:id="Emp_Det_btn_Update" layoutX="620.0" layoutY="262.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
                               <Button fx:id="Emp_Det_btn_Clear" layoutX="620.0" layoutY="329.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
                               <Button fx:id="Emp_Det_btn_delete" layoutX="488.0" layoutY="329.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />

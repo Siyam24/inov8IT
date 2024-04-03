@@ -13,11 +13,11 @@ public class Employee {
     private String empNIC;
     private String empContact;
     private String empEmail;
-    private int empSalary;
+    private double empSalary;
     private String empAddress;
 
 
-    public Employee( String empName, String empNIC, String empContact, String empEmail, int empSalary, String empAddress) {
+    public Employee(String empName, String empNIC, String empContact, String empEmail, double empSalary, String empAddress) {
 
         this.empName = empName;
         this.empNIC = empNIC;
@@ -26,7 +26,7 @@ public class Employee {
         this.empSalary = empSalary;
         this.empAddress = empAddress;
     }
-    public Employee( int empID,String empName, String empNIC, String empContact, String empEmail, int empSalary, String empAddress) {
+    public Employee( int empID,String empName, String empNIC, String empContact, String empEmail, double empSalary, String empAddress) {
         this.empId=empID;
         this.empName = empName;
         this.empNIC = empNIC;
@@ -63,7 +63,7 @@ public class Employee {
             statement.setString(2, this.empNIC);
             statement.setString(3, this.empContact);
             statement.setString(4, this.empEmail);
-            statement.setInt(5, this.empSalary);
+            statement.setDouble(5, this.empSalary);
             statement.setString(6, this.empAddress);
 
             // Execute query
@@ -245,7 +245,7 @@ public class Employee {
         return empEmail;
     }
 
-    public int getEmpSalary() {
+    public double getEmpSalary() {
         return empSalary;
     }
 

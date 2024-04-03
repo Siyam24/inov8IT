@@ -1,6 +1,8 @@
 package org.example.goldmanagementsystem;
 
+import Controler.EmployeeData;
 import Models.Customer;
+import Models.Employee;
 import Models.databaseConnection;
 import javafx.beans.Observable;
 
@@ -256,6 +258,23 @@ public class dasboardcontroller implements Initializable {
     @FXML
     private ToggleGroup update;
 
+    @FXML
+    private TextField empAddress;
+
+    @FXML
+    private TextField empContact;
+
+    @FXML
+    private TextField empEmail;
+
+    @FXML
+    private TextField empName;
+
+    @FXML
+    private TextField empNic;
+
+    @FXML
+    private TextField empSalary;
 
 
 
@@ -327,110 +346,7 @@ public class dasboardcontroller implements Initializable {
 
     }
 
-   /* public void addCustomerAdd(){
-        String sql="INSERT INTO customer"
-                +" (cusName,cusNIC,cusContact,cusEmail,cusAddress)"
-                +"VALUES (?,?,?,?,?)";
 
-        connect= databaseConnection.getConnection();
-
-        try {
-            Alert alert;
-            if(addCusDet_Cusname.getText().isEmpty()
-               ||addCusDet_CusNICno.getText().isEmpty()
-                ||  addCusDet_CusTelno.getText().isEmpty()
-                ||   addCusDet_CusEmail.getText().isEmpty()
-                ||   addCusDet_CusNICno.getText().isEmpty())
-            {
-                alert=new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error Message");
-                alert.setHeaderText(null);
-                alert.setContentText("Please fill all blank fields");
-                alert.showAndWait();
-            }else {
-
-
-
-
-
-                prepare = connect.prepareStatement(sql);
-                prepare.setString(1, addCusDet_Cusname.getText());
-                prepare.setString(2, addCusDet_CusNICno.getText());
-                prepare.setString(3, addCusDet_CusTelno.getText());
-                prepare.setString(4, addCusDet_CusEmail.getText());
-                prepare.setString(5, addCusDet_CusAdd.getText());
-
-                prepare.executeUpdate();
-                alert=new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Information Message");
-                alert.setHeaderText(null);
-                alert.setContentText(" Successfully Added");
-                alert.showAndWait();
-
-                addCustomerShowListData();
-                addcustomerClear();
-
-
-            }
-
-        }catch (Exception e){e.printStackTrace();
-        }
-    }*/
-   /*public void addCustomerAdd() {
-       String sqlCheck = "SELECT * FROM customer WHERE cusName = ?";
-       String sqlInsert = "INSERT INTO customer (cusName, cusNIC, cusContact, cusEmail, cusAddress) VALUES (?, ?, ?, ?, ?)";
-
-       connect = databaseConnection.getConnection();
-
-       try {
-           Alert alert;
-           if (addCusDet_Cusname.getText().isEmpty() ||
-                   addCusDet_CusNICno.getText().isEmpty() ||
-                   addCusDet_CusTelno.getText().isEmpty() ||
-                   addCusDet_CusEmail.getText().isEmpty() ||
-                   addCusDet_CusNICno.getText().isEmpty()) {
-               alert = new Alert(Alert.AlertType.ERROR);
-               alert.setTitle("Error Message");
-               alert.setHeaderText(null);
-               alert.setContentText("Please fill all blank fields");
-               alert.showAndWait();
-           } else {
-               // Check if customer with the same name already exists
-               prepare = connect.prepareStatement(sqlCheck);
-               prepare.setString(1, addCusDet_Cusname.getText());
-               ResultSet result = prepare.executeQuery();
-               if (result.next()) {
-                   alert = new Alert(Alert.AlertType.ERROR);
-                   alert.setTitle("Error Message");
-                   alert.setHeaderText(null);
-                   alert.setContentText("Customer with the same name already exists");
-                   alert.showAndWait();
-                   return; // Exit method if customer already exists
-               }
-
-               // Insert new customer if not already existing
-               prepare = connect.prepareStatement(sqlInsert);
-               prepare.setString(1, addCusDet_Cusname.getText());
-               prepare.setString(2, addCusDet_CusNICno.getText());
-               prepare.setString(3, addCusDet_CusTelno.getText());
-               prepare.setString(4, addCusDet_CusEmail.getText());
-               prepare.setString(5, addCusDet_CusAdd.getText());
-
-               prepare.executeUpdate();
-               alert = new Alert(Alert.AlertType.INFORMATION);
-               alert.setTitle("Information Message");
-               alert.setHeaderText(null);
-               alert.setContentText("Successfully Added");
-               alert.showAndWait();
-
-               addCustomerShowListData();
-               addcustomerClear();
-           }
-
-       } catch (Exception e) {
-           e.printStackTrace();
-       }
-   }*/
    public void addCustomerAdd() {
        String sqlCheck = "SELECT * FROM customer WHERE cusName = ?";
        String sqlInsert = "INSERT INTO customer (cusName, cusNIC, cusContact, cusEmail, cusAddress) VALUES (?, ?, ?, ?, ?)";
@@ -462,6 +378,8 @@ public class dasboardcontroller implements Initializable {
                    alert.showAndWait();
                    return; // Exit method if customer already exists
                }
+
+
 
                // Validate email
                String email = addCusDet_CusEmail.getText();
@@ -515,6 +433,118 @@ public class dasboardcontroller implements Initializable {
                addCustomerShowListData();
                addcustomerClear();
            }
+
+
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+
+
+
+       try {
+           Alert alert_1;
+           if (Emp_Det_Col_Empname.getText().isEmpty() ||
+                   Emp_Det_Col_NICno.getText().isEmpty() ||
+                   empContact.getText().isEmpty() ||
+                   Emp_Det_Col_Email.getText().isEmpty() ||
+                   empSalary.getText().isEmpty() ||
+                   empAddress.getText().isEmpty()) {
+               alert_1 = new Alert(Alert.AlertType.ERROR);
+               alert_1.setTitle("Error Message");
+               alert_1.setHeaderText(null);
+               alert_1.setContentText("Please fill all blank fields");
+               alert_1.showAndWait();
+           } else {
+               // Check if customer with the same name already exists
+               prepare = connect.prepareStatement(sqlCheck);
+               prepare.setString(1, Emp_Det_Col_Empname.getText());
+               ResultSet result = prepare.executeQuery();
+               if (result.next()) {
+                   alert_1 = new Alert(Alert.AlertType.ERROR);
+                   alert_1.setTitle("Error Message");
+                   alert_1.setHeaderText(null);
+                   alert_1.setContentText("Employee with the same name already exists");
+                   alert_1.showAndWait();
+                   return; // Exit method if customer already exists
+               }
+
+
+
+               // Validate email
+               String email = empEmail.getText();
+               if (!isValidEmail(email)) {
+                   alert_1 = new Alert(Alert.AlertType.ERROR);
+                   alert_1.setTitle("Error Message");
+                   alert_1.setHeaderText(null);
+                   alert_1.setContentText("Invalid email format");
+                   alert_1.showAndWait();
+                   return; // Exit method if email is invalid
+               }
+
+               // Validate NIC
+               String nic = empNic.getText();
+               if (!isValidNIC(nic)) {
+                   alert_1 = new Alert(Alert.AlertType.ERROR);
+                   alert_1.setTitle("Error Message");
+                   alert_1.setHeaderText(null);
+                   alert_1.setContentText("Invalid NIC format");
+                   alert_1.showAndWait();
+                   return; // Exit method if NIC is invalid
+               }
+
+               // Validate telephone number
+               String telNo = empContact.getText();
+               if (!isValidTelNo(telNo)) {
+                   alert_1 = new Alert(Alert.AlertType.ERROR);
+                   alert_1.setTitle("Error Message");
+                   alert_1.setHeaderText(null);
+                   alert_1.setContentText("Invalid telephone number format");
+                   alert_1.showAndWait();
+                   return; // Exit method if telephone number is invalid
+               }
+
+               // Validate email
+               String address = empAddress.getText();
+               if (!isValidEmail(address)) {
+                   alert_1 = new Alert(Alert.AlertType.ERROR);
+                   alert_1.setTitle("Error Message");
+                   alert_1.setHeaderText(null);
+                   alert_1.setContentText("Invalid email format");
+                   alert_1.showAndWait();
+                   return; // Exit method if email is invalid
+               }
+
+               // Validate email
+               String salary = empSalary.getText();
+               if (!isValidEmail(salary)) {
+                   alert_1 = new Alert(Alert.AlertType.ERROR);
+                   alert_1.setTitle("Error Message");
+                   alert_1.setHeaderText(null);
+                   alert_1.setContentText("Invalid email format");
+                   alert_1.showAndWait();
+                   return; // Exit method if email is invalid
+               }
+
+
+               // Insert new customer if validations pass
+               prepare = connect.prepareStatement(sqlInsert);
+               prepare.setString(1, addCusDet_Cusname.getText());
+               prepare.setString(2, nic);
+               prepare.setString(3, addCusDet_CusTelno.getText());
+               prepare.setString(4, email);
+               prepare.setString(5, addCusDet_CusAdd.getText());
+
+               prepare.executeUpdate();
+               alert_1 = new Alert(Alert.AlertType.INFORMATION);
+               alert_1.setTitle("Information Message");
+               alert_1.setHeaderText(null);
+               alert_1.setContentText("Successfully Added");
+               alert_1.showAndWait();
+
+//               addEmployeeShowListData();
+//               addEmployeeClear();
+           }
+
 
        } catch (Exception e) {
            e.printStackTrace();
@@ -635,6 +665,29 @@ public void logout(){
         }
     }catch (Exception e){e.printStackTrace();
 }}
+
+
+//
+// employee
+public void addEmp() {
+    String name = Emp_Det_TX_Empname.getText().toString();
+    String address = Emp_Det_TX_Address.getText().toString();
+    String contact = Emp_Det_TX_TelNo.getText().toString();
+    String nic = Emp_Det_TX_NICNo.getText().toString();
+    String email = Emp_Det_TX_Email.getText().toString();
+
+    double salary = 0.0;
+//    EmployeeData emp = new EmployeeData();
+    EmployeeData.addEmployee(name, contact, nic, email, salary, address);
+}
+
+
+
+
+
+
+
+
     public void switchform(ActionEvent event){
         Dashboard_form.setVisible(false);
         Transactionnew_form.setVisible(false);
