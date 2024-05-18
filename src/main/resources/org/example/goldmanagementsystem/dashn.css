@@ -115,3 +115,10 @@
     -fx-background-radius: 2px 8px 8px 2px;
 }
 
+.highlight{
+fx-background-color:#B2BEB5
+}
+.default-color0.chart-bar{
+    -fx-bar-fill: #bf9b30;
+}
+

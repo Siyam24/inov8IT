@@ -2,6 +2,8 @@
 
 <?import java.lang.String?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -24,85 +26,108 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.goldmanagementsystem.dasboardcontroller">
    
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="803.0" prefWidth="1132.0">
          <children>
             <BorderPane layoutX="193.0" layoutY="200.0" prefHeight="800.0" prefWidth="1100.0" styleClass="shadow" stylesheets="@dashn.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <left>
-                  <AnchorPane prefHeight="800.0" prefWidth="283.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="744.0" prefWidth="297.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="42.0" layoutY="1.0" prefHeight="747.0" prefWidth="283.0" styleClass="white-bg" stylesheets="@dashn.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                        <AnchorPane layoutX="19.0" layoutY="1.0" prefHeight="750.0" prefWidth="278.0" styleClass="white-bg" stylesheets="@dashn.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
                            <children>
-                              <Pane layoutX="42.0" prefHeight="200.0" prefWidth="200.0" styleClass="shadow" stylesheets="@dashn.css">
+                              <Pane layoutX="46.0" prefHeight="200.0" prefWidth="196.0" styleClass="shadow" stylesheets="@dashn.css">
                                  <children>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../img/image.png" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Button fx:id="dasboardbtn" layoutX="13.0" layoutY="191.0" mnemonicParsing="false" onAction="#switchform" prefHeight="40.0" prefWidth="257.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Dashboard">
+                              <Button fx:id="dasboardbtn" layoutX="17.0" layoutY="192.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="260.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Dashboard">
                                  <font>
                                     <Font name="Chakra Petch SemiBold" size="18.0" />
-                                 </font></Button>
-                              <Button fx:id="masterdatamanagementbtn" layoutX="13.0" layoutY="302.0" mnemonicParsing="false" onAction="#switchform" prefHeight="40.0" prefWidth="257.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Master Data Management">
+                                 </font>
+                              </Button>
+                              <Button fx:id="masterdatamanagementbtn" layoutX="17.0" layoutY="302.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="260.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Master Data Management">
                                  <font>
                                     <Font name="Chakra Petch SemiBold" size="18.0" />
-                                 </font></Button>
-                              <Button fx:id="ordermanagementbtn" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#switchform" prefHeight="40.0" prefWidth="257.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Order Management">
+                                 </font>
+                              </Button>
+                              <Button fx:id="ordermanagementbtn" layoutX="17.0" layoutY="357.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="260.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Order Management">
                                  <font>
                                     <Font name="Chakra Petch SemiBold" size="18.0" />
-                                 </font></Button>
-                              <Button fx:id="billingbtn" layoutX="13.0" layoutY="415.0" mnemonicParsing="false" onAction="#switchform" prefHeight="40.0" prefWidth="257.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Billing">
+                                 </font>
+                              </Button>
+                              <Button fx:id="billingbtn" layoutX="17.0" layoutY="412.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="260.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Billing">
                                  <font>
                                     <Font name="Chakra Petch SemiBold" size="18.0" />
-                                 </font></Button>
-                              <Button fx:id="payrollbtn" layoutX="13.0" layoutY="467.0" mnemonicParsing="false" onAction="#switchform" prefHeight="40.0" prefWidth="257.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Payroll">
+                                 </font>
+                              </Button>
+                              <Button fx:id="payrollbtn" layoutX="17.0" layoutY="467.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="260.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Payroll">
                                  <font>
                                     <Font name="Chakra Petch SemiBold" size="18.0" />
-                                 </font></Button>
-                              <Button fx:id="analyticsbtn" layoutX="13.0" layoutY="518.0" mnemonicParsing="false" onAction="#switchform" prefHeight="40.0" prefWidth="257.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Analytics">
+                                 </font>
+                              </Button>
+                              <Button fx:id="analyticsbtn" layoutX="17.0" layoutY="522.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="260.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Calendar">
                                  <font>
                                     <Font name="Chakra Petch SemiBold" size="18.0" />
-                                 </font></Button>
-                              <Button fx:id="inquirybtn" layoutX="14.0" layoutY="569.0" mnemonicParsing="false" onAction="#switchform" prefHeight="40.0" prefWidth="257.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Inquiry">
+                                 </font>
+                              </Button>
+                              <Button fx:id="inquirybtn" layoutX="17.0" layoutY="577.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="260.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Inquiry">
                                  <font>
                                     <Font name="Chakra Petch SemiBold" size="18.0" />
-                                 </font></Button>
-                              <Hyperlink layoutX="118.0" layoutY="641.0" text="Help">
+                                 </font>
+                              </Button>
+                              <Hyperlink layoutX="123.0" layoutY="655.0" text="Help">
                                  <font>
                                     <Font name="Chakra Petch SemiBold" size="18.0" />
-                                 </font></Hyperlink>
-                              <Button fx:id="signout" layoutX="94.0" layoutY="686.0" mnemonicParsing="false" onAction="#logout" prefHeight="42.0" prefWidth="94.0" styleClass="btnsignout" stylesheets="@dashn.css" text="Signout" textFill="WHITE">
+                                 </font>
+                              </Hyperlink>
+                              <Button fx:id="signout" layoutX="105.0" layoutY="688.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="85.0" styleClass="btnsignout" stylesheets="@dashn.css" text="Signout" textFill="WHITE">
                                  <font>
                                     <Font name="Chakra Petch SemiBold" size="17.0" />
-                                 </font></Button>
-                              <Button fx:id="transactionnewbtn" layoutX="14.0" layoutY="243.0" mnemonicParsing="false" onAction="#switchform" prefHeight="38.0" prefWidth="256.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Transactions">
+                                 </font>
+                              </Button>
+                              <Button fx:id="transactionnewbtn" layoutX="16.0" layoutY="247.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="261.0" styleClass="nav-btn" stylesheets="@dashn.css" text="Transactions">
                                  <font>
                                     <Font name="Chakra Petch SemiBold" size="18.0" />
-                                 </font></Button>
+                                 </font>
+                              </Button>
                            </children>
                         </AnchorPane>
                      </children>
                   </AnchorPane>
                </left>
                <top>
-                  <AnchorPane prefHeight="62.0" prefWidth="1100.0" stylesheets="@dashn.css" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="66.0" prefWidth="1146.0" stylesheets="@dashn.css" BorderPane.alignment="CENTER">
                      <children>
-                        <Label alignment="CENTER" layoutX="139.0" layoutY="13.0" prefHeight="36.0" prefWidth="890.0" text="Sujitha Jewellery &amp; Workshop">
+                        <Label alignment="CENTER" layoutX="127.0" layoutY="7.0" prefHeight="56.0" prefWidth="891.0" text="Sujitha Jewellery &amp; Workshop">
                            <font>
                               <Font name="Bangla MN Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Button fx:id="close" layoutX="1031.0" layoutY="19.0" mnemonicParsing="false" onAction="#close" styleClass="close" stylesheets="@dashn.css" text="close" />
+                        <Text fontSmoothingType="LCD" layoutX="1083.0" layoutY="46.0" onMouseClicked="#close" strokeType="OUTSIDE" strokeWidth="0.0" text="❌">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Text>
                      </children>
                      <styleClass>
                         <String fx:value="shadow" />
@@ -110,23 +135,23 @@
                      </styleClass>
                   </AnchorPane>
                </top>
-               <center>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="main-bg" BorderPane.alignment="CENTER">
+               <right>
+                  <AnchorPane prefHeight="744.0" prefWidth="872.0" styleClass="main-bg" BorderPane.alignment="CENTER">
                      <stylesheets>
                         
                         <URL value="@dashn.css" />
                      </stylesheets>
                      <children>
-                        <AnchorPane fx:id="Dashboard_form" layoutX="11.0" layoutY="21.0" prefHeight="738.0" prefWidth="817.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="Dashboard_form" layoutX="1.0" layoutY="1.0" prefHeight="750.0" prefWidth="828.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="1.0">
                            <children>
-                              <AnchorPane layoutX="29.0" layoutY="299.0" prefHeight="407.0" prefWidth="385.0" stylesheets="@dashn.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="403.0" AnchorPane.topAnchor="299.0">
+                              <AnchorPane layoutX="28.0" layoutY="297.0" prefHeight="417.0" prefWidth="417.0" stylesheets="@dashn.css" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="424.0" AnchorPane.topAnchor="297.0">
                                  <styleClass>
                                     <String fx:value="radius" />
                                     <String fx:value="shadow" />
                                     <String fx:value="white-bg" />
                                  </styleClass>
                                  <children>
-                                    <BarChart layoutX="-27.0" layoutY="-9.0" prefHeight="420.0" prefWidth="403.0" title="Income" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <BarChart fx:id="dashboard_noORGR" layoutX="-27.0" layoutY="-9.0" prefHeight="412.0" prefWidth="411.0" stylesheets="@dashn.css" title="No Of Orders" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="0.0">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" />
                                       </xAxis>
@@ -136,49 +161,49 @@
                                     </BarChart>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="454.0" layoutY="299.0" prefHeight="416.0" prefWidth="366.0" stylesheets="@dashn.css" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="454.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="299.0">
+                              <AnchorPane layoutX="462.0" layoutY="299.0" prefHeight="414.0" prefWidth="370.0" stylesheets="@dashn.css" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="462.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="299.0">
                                  <styleClass>
                                     <String fx:value="radius" />
                                     <String fx:value="shadow" />
                                     <String fx:value="white-bg" />
                                  </styleClass>
                                  <children>
-                                    <BarChart layoutY="-9.0" prefHeight="419.0" prefWidth="366.0" title="Orders" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-9.0">
+                                    <BarChart fx:id="dashboard_GTgraph" layoutX="7.0" layoutY="11.0" prefHeight="396.0" prefWidth="355.0" stylesheets="@dashn.css" title="No Of Cash Transactions" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="11.0">
                                       <xAxis>
-                                        <CategoryAxis side="BOTTOM" />
+                                        <CategoryAxis prefHeight="9.0" prefWidth="308.0" side="BOTTOM" />
                                       </xAxis>
                                       <yAxis>
-                                        <NumberAxis side="LEFT" />
+                                        <NumberAxis prefHeight="346.0" prefWidth="29.0" side="LEFT" />
                                       </yAxis>
                                     </BarChart>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="29.0" layoutY="24.0" prefHeight="200.0" prefWidth="772.0" stylesheets="@dashn.css" AnchorPane.bottomAnchor="514.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="24.0">
+                              <AnchorPane layoutX="22.0" layoutY="28.0" prefHeight="213.0" prefWidth="801.0" stylesheets="@dashn.css" AnchorPane.bottomAnchor="509.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="28.0">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="radius" />
                                  </styleClass>
                                  <children>
-                                    <AnchorPane layoutX="14.0" layoutY="7.0" prefHeight="200.0" prefWidth="250.0" styleClass="card" stylesheets="@dashn.css">
+                                    <AnchorPane layoutX="9.0" layoutY="7.0" prefHeight="200.0" prefWidth="250.0" styleClass="card" stylesheets="@dashn.css">
                                        <children>
-                                          <ImageView fitHeight="79.0" fitWidth="116.0" layoutX="14.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../img/4577208.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Label layoutX="46.0" layoutY="46.0" text="No of Employees" textFill="WHITE">
+<!--                                          <ImageView fitHeight="79.0" fitWidth="116.0" layoutX="14.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                                             <image>-->
+<!--                                                <Image url="@../../../img/4577208.png" />-->
+<!--                                             </image>-->
+<!--                                          </ImageView>-->
+                                          <Label layoutX="46.0" layoutY="39.0" text="Live Gold Rate" textFill="WHITE">
                                              <font>
                                                 <Font name="Cochin" size="26.0" />
                                              </font>
                                           </Label>
-                                          <Label alignment="CENTER_RIGHT" layoutX="139.0" layoutY="147.0" prefHeight="0.0" prefWidth="78.0" text="0" textFill="WHITE">
+                                          <Label fx:id="txtGoldRate" alignment="CENTER_RIGHT" layoutX="39.0" layoutY="147.0" prefHeight="0.0" prefWidth="150.0" text="0" textFill="WHITE">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="292.0" layoutY="7.0" prefHeight="200.0" prefWidth="232.0" styleClass="card" stylesheets="@dashn.css">
+                                    <AnchorPane layoutX="271.0" layoutY="7.0" prefHeight="200.0" prefWidth="232.0" styleClass="card" stylesheets="@dashn.css">
                                        <children>
                                           <ImageView fitHeight="79.0" fitWidth="137.0" layoutX="14.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -190,25 +215,25 @@
                                                 <Font name="Cochin" size="26.0" />
                                              </font>
                                           </Label>
-                                          <Label alignment="CENTER_RIGHT" layoutX="132.0" layoutY="147.0" prefHeight="0.0" prefWidth="78.0" text="0" textFill="WHITE">
+                                          <Label fx:id="dashboard_noOR" alignment="CENTER_RIGHT" layoutX="132.0" layoutY="147.0" prefHeight="0.0" prefWidth="78.0" text="0" textFill="WHITE">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="552.0" layoutY="7.0" prefHeight="200.0" prefWidth="224.0" styleClass="card" stylesheets="@dashn.css">
+                                    <AnchorPane layoutX="514.0" layoutY="7.0" prefHeight="201.0" prefWidth="278.0" styleClass="card" stylesheets="@dashn.css">
                                        <children>
                                           <ImageView fitHeight="99.0" fitWidth="87.0" layoutX="14.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../img/order-completed-1.png" />
                                              </image></ImageView>
-                                          <Label layoutX="85.0" layoutY="40.0" text="No of Sales" textFill="WHITE">
+                                          <Label layoutX="85.0" layoutY="36.0" prefHeight="31.0" prefWidth="187.0" text="No of Employees" textFill="WHITE">
                                              <font>
                                                 <Font name="Cochin" size="26.0" />
                                              </font>
                                           </Label>
-                                          <Label alignment="CENTER_RIGHT" layoutX="132.0" layoutY="157.0" prefHeight="0.0" prefWidth="78.0" text="0" textFill="WHITE">
+                                          <Label fx:id="dasboard_Emp" alignment="CENTER_RIGHT" layoutX="132.0" layoutY="157.0" prefHeight="0.0" prefWidth="78.0" text="0" textFill="WHITE">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
@@ -217,7 +242,7 @@
                                     </AnchorPane>
                                  </children>
                               </AnchorPane>
-                              <Separator layoutX="29.0" layoutY="239.0" prefHeight="4.0" prefWidth="771.0" AnchorPane.bottomAnchor="495.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="239.0" />
+                              <Separator layoutX="20.0" layoutY="247.0" prefHeight="16.0" prefWidth="804.0" AnchorPane.bottomAnchor="487.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="247.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="Transactionnew_form" layoutX="11.0" layoutY="13.0" prefHeight="697.0" prefWidth="785.0" visible="false">
@@ -228,45 +253,49 @@
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="585.0" prefWidth="727.0">
                                              <children>
-                                                <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="257.0" prefWidth="697.0">
+                                                <AnchorPane layoutX="14.0" prefHeight="257.0" prefWidth="744.0">
                                                    <children>
-                                                      <TextField layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="316.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
+                                                      <TextField fx:id="Gold_search" layoutX="26.0" layoutY="14.0" onAction="#searchActionGold" prefHeight="30.0" prefWidth="250.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
                                                       <Label layoutX="26.0" layoutY="55.0" text="Gold Transactions" textFill="WHITE">
                                                          <font>
                                                             <Font size="24.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label layoutX="26.0" layoutY="103.0" prefHeight="20.0" prefWidth="101.0" text="Reference No" textFill="WHITE">
+                                                      <Label layoutX="26.0" layoutY="202.0" prefHeight="20.0" prefWidth="101.0" text="Reference No" textFill="WHITE">
                                                          <font>
                                                             <Font size="16.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label layoutX="26.0" layoutY="149.0" prefHeight="18.0" prefWidth="78.0" text="Description" textFill="WHITE">
+                                                      <Label layoutX="324.0" layoutY="142.0" prefHeight="18.0" prefWidth="78.0" text="Description" textFill="WHITE">
                                                          <font>
                                                             <Font size="16.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label layoutX="26.0" layoutY="201.0" text="Amount" textFill="WHITE">
+                                                      <Label layoutX="324.0" layoutY="202.0" text="Amount" textFill="WHITE">
                                                          <font>
                                                             <Font size="16.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextField layoutX="144.0" layoutY="98.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                      <TextField layoutX="144.0" layoutY="144.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                      <TextField layoutX="144.0" layoutY="196.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                      <Button layoutX="406.0" layoutY="90.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="80.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
-                                                      <Button layoutX="521.0" layoutY="150.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="80.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
-                                                      <Button layoutX="406.0" layoutY="150.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="80.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
-                                                      <Button layoutX="521.0" layoutY="90.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="80.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
+                                                      <TextField fx:id="GTtxtRef" layoutX="128.0" layoutY="197.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                      <TextField fx:id="GTtxtDes" layoutX="415.0" layoutY="137.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                      <TextField fx:id="GTtxtAmount" layoutX="415.0" layoutY="197.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                      <Button fx:id="GTbtnadd" layoutX="606.0" layoutY="54.0" mnemonicParsing="false" onAction="#GTadd" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
+                                                      <Button fx:id="GTbtnclear" layoutX="606.0" layoutY="204.0" mnemonicParsing="false" onAction="#GTClesr" onDragDetected="#GTClesr" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                                                      <Button fx:id="GTbtndelete" layoutX="606.0" layoutY="154.0" mnemonicParsing="false" onAction="#GTdelete" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
+                                                      <Button fx:id="GTbtnupdate" layoutX="606.0" layoutY="104.0" mnemonicParsing="false" onAction="#GTupdate" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
+                                                      <Label layoutX="26.0" layoutY="145.0" text="ID" textFill="#f5f5f5" />
+                                                      <TextField fx:id="GTtxtID" layoutX="128.0" layoutY="137.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                      <Button layoutX="378.0" layoutY="18.0" mnemonicParsing="false" onAction="#generatePDFGold" styleClass="ctbuttons" text="Gold Transaction Report" />
                                                    </children>
                                                 </AnchorPane>
-                                                <AnchorPane layoutX="3.0" layoutY="244.0" prefHeight="294.0" prefWidth="761.0">
+                                                <AnchorPane layoutX="3.0" layoutY="241.0" prefHeight="328.0" prefWidth="766.0">
                                                    <children>
-                                                      <TableView layoutX="5.0" layoutY="20.0" prefHeight="311.0" prefWidth="762.0" stylesheets="@dashn.css">
+                                                      <TableView fx:id="GTtable" layoutX="-1.0" layoutY="14.0" onMouseClicked="#getDataGT" prefHeight="311.0" prefWidth="767.0" stylesheets="@dashn.css">
                                                         <columns>
-                                                          <TableColumn prefWidth="221.0" text="Reference NO" />
-                                                          <TableColumn prefWidth="332.0" text="Description" />
-                                                            <TableColumn prefWidth="204.0" text="Amount" />
+                                                            <TableColumn fx:id="GTcolID" prefWidth="111.0" text="ID" />
+                                                          <TableColumn fx:id="GTcolref" prefWidth="144.0" text="Reference NO" />
+                                                          <TableColumn fx:id="GTcoldes" prefWidth="320.0" text="Description" />
+                                                            <TableColumn fx:id="GTcolamount" prefWidth="179.0" text="Amount" />
                                                         </columns>
                                                          <styleClass>
                                                             <String fx:value="table-column" />
@@ -283,20 +312,19 @@
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <AnchorPane layoutX="14.0" layoutY="29.0" prefHeight="232.0" prefWidth="748.0">
+                                                <AnchorPane layoutX="11.0" layoutY="18.0" prefHeight="232.0" prefWidth="748.0">
                                                    <children>
-                                                      <TextField layoutX="14.0" layoutY="5.0" prefHeight="31.0" prefWidth="261.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
                                                       <Label layoutX="25.0" layoutY="50.0" text="Cash Transactions" textFill="WHITE">
                                                          <font>
                                                             <Font size="24.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label layoutX="25.0" layoutY="108.0" text=" Date" textFill="WHITE">
+                                                      <Label layoutX="300.0" layoutY="107.0" text=" Date" textFill="WHITE">
                                                          <font>
                                                             <Font size="14.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label layoutX="25.0" layoutY="151.0" text="Role" textFill="WHITE">
+                                                      <Label layoutX="302.0" layoutY="152.0" text="Role" textFill="WHITE">
                                                          <font>
                                                             <Font size="14.0" />
                                                          </font>
@@ -306,44 +334,146 @@
                                                             <Font size="14.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextField fx:id="CTtxtAmount" layoutX="121.0" layoutY="187.0" prefHeight="31.0" prefWidth="168.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                      <Button fx:id="CTadd" layoutX="584.0" layoutY="15.0" mnemonicParsing="false" onAction="#createCT" prefHeight="45.0" prefWidth="82.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
-                                                      <Button layoutX="583.0" layoutY="179.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
-                                                      <Button fx:id="CTbtnupdate" layoutX="583.0" layoutY="74.0" mnemonicParsing="false" onAction="#updateCT" prefHeight="42.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
-                                                      <Button fx:id="CTbtndelete" layoutX="584.0" layoutY="122.0" mnemonicParsing="false" onAction="#deleteCT" prefHeight="46.0" prefWidth="82.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
-                                                      <TextField fx:id="CTtxtName" layoutX="351.0" layoutY="145.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                      <Label layoutX="312.0" layoutY="151.0" text="Name" textFill="WHITE">
+                                                      <TextField fx:id="CTtxtAmount" layoutX="121.0" layoutY="187.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                      <Button fx:id="CTadd" layoutX="583.0" layoutY="29.0" mnemonicParsing="false" onAction="#createCT" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
+                                                      <Button layoutX="583.0" layoutY="179.0" mnemonicParsing="false" onAction="#clearCT" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                                                      <Button fx:id="CTbtnupdate" layoutX="583.0" layoutY="79.0" mnemonicParsing="false" onAction="#updateCT" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
+                                                      <Button fx:id="CTbtndelete" layoutX="583.0" layoutY="129.0" mnemonicParsing="false" onAction="#deleteCT" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
+                                                      <TextField fx:id="CTtxtName" layoutX="121.0" layoutY="145.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                      <Label layoutX="25.0" layoutY="152.0" text="Name" textFill="WHITE">
                                                          <font>
                                                             <Font size="14.0" />
                                                          </font>
                                                       </Label>
-                                                      <DatePicker fx:id="CTtxtDate" layoutX="120.0" layoutY="105.0" prefHeight="25.0" prefWidth="170.0" />
-                                                      <Label layoutX="312.0" layoutY="190.0" text="Type" textFill="WHITE">
+                                                      <DatePicker fx:id="CTtxtDate" layoutX="374.0" layoutY="105.0" prefHeight="26.0" prefWidth="162.0" />
+                                                      <Label layoutX="302.0" layoutY="194.0" text="Type" textFill="WHITE">
                                                          <font>
                                                             <Font size="14.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextField fx:id="CTtxtType" layoutX="351.0" layoutY="184.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                      <TextField fx:id="CTtxtRole" layoutX="125.0" layoutY="148.0" />
+                                                      <TextField fx:id="CTtxtType" layoutX="374.0" layoutY="187.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                      <Label layoutX="25.0" layoutY="109.0" text="ID" textFill="#fcfcfc" />
+                                                      <TextField fx:id="cash_search" layoutX="25.0" layoutY="-2.0" onAction="#searchActionCash" prefHeight="30.0" prefWidth="250.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
+                                                      <TextField fx:id="CTtxtID" layoutX="120.0" layoutY="101.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                      <TextField fx:id="CTtxtRole" layoutX="374.0" layoutY="145.0" styleClass="textfield" stylesheets="@dashn.css" />
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane layoutX="-4.0" layoutY="250.0" prefHeight="337.0" prefWidth="772.0">
                                                    <children>
-                                                      <TableView fx:id="CTtable" layoutX="8.0" layoutY="13.0" onMouseClicked="#getData" prefHeight="309.0" prefWidth="761.0">
+                                                      <TableView fx:id="CTtable" layoutX="8.0" layoutY="14.0" onMouseClicked="#getData" prefHeight="309.0" prefWidth="761.0">
                                                         <columns>
-                                                          <TableColumn fx:id="CTcoldate" prefWidth="125.0" text="Date" />
-                                                          <TableColumn fx:id="CTcolrole" prefWidth="157.0" text="Role" />
-                                                            <TableColumn fx:id="CTcolamount" prefWidth="183.0" text="Amount" />
-                                                            <TableColumn fx:id="CTcolname" prefWidth="151.0" text=" Name" />
-                                                            <TableColumn fx:id="CTcoltype" prefWidth="140.0" text="Type" />
+                                                            <TableColumn fx:id="CTcoldID" prefWidth="132.0" text="ID" />
+                                                            <TableColumn fx:id="CTcolname" prefWidth="122.0" text=" Name" />
+                                                          <TableColumn fx:id="CTcolrole" minWidth="0.0" prefWidth="111.0" text="Role" />
+                                                            <TableColumn fx:id="CTcolamount" minWidth="8.0" prefWidth="118.0" text="Amount" />
+                                                          <TableColumn fx:id="CTcoldate" prefWidth="113.0" text="Date" />
+                                                            <TableColumn fx:id="CTcoltype" prefWidth="158.0" text="Type" />
                                                         </columns>
                                                       </TableView>
                                                    </children>
                                                 </AnchorPane>
+                                                <Button layoutX="388.0" layoutY="28.0" mnemonicParsing="false" onAction="#generatePDFCash" styleClass="ctbuttons" text="Cash Transaction Report" />
                                              </children>
                                           </AnchorPane>
                                     </content>
                                   </Tab>
+                                    <Tab text="Calculator">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <AnchorPane prefHeight="571.0" prefWidth="770.0">
+                                                   <children>
+                                                      <GridPane layoutX="14.0" layoutY="135.0" prefHeight="397.0" prefWidth="734.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Button fx:id="one" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="1">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="two" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="2" GridPane.columnIndex="1">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="four" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="4" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="five" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="three" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="3" GridPane.columnIndex="2">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="seven" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="7" GridPane.rowIndex="2">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="eight" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="six" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="nine" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="zero" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="0" GridPane.rowIndex="3">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="equals" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="=" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="clear" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="CL" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="plus" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="+" GridPane.columnIndex="3">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="minus" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="multiplication" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                            <Button fx:id="divide" mnemonicParsing="false" onAction="#handleactionbutton" prefHeight="95.0" prefWidth="178.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                               <font>
+                                                                  <Font name="System Bold" size="24.0" />
+                                                               </font></Button>
+                                                         </children>
+                                                      </GridPane>
+                                                      <TextField fx:id="display" alignment="CENTER_RIGHT" editable="false" layoutX="13.0" layoutY="14.0" prefHeight="90.0" prefWidth="730.0">
+                                                         <font>
+                                                            <Font size="48.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </Tab>
                                 </tabs>
                               </TabPane>
                               <Label layoutX="40.0" layoutY="12.0" prefHeight="57.0" prefWidth="303.0" text="Transactions" textFill="WHITE">
@@ -353,106 +483,55 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="MasterdataManagementform" layoutX="19.0" layoutY="27.0" prefHeight="724.0" prefWidth="805.0" visible="false">
+                        <AnchorPane fx:id="MasterdataManagementform" layoutX="67.0" layoutY="-7.0" prefHeight="724.0" prefWidth="805.0" visible="false">
                            <children>
-                              <Pane layoutX="37.0" layoutY="94.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@dashn.css">
+                              <Pane layoutX="37.0" layoutY="235.0" prefHeight="242.0" prefWidth="211.0" stylesheets="@dashn.css">
                                  <styleClass>
                                     <String fx:value="pane" />
                                     <String fx:value="radius" />
                                  </styleClass>
                                  <children>
-                                    <Button fx:id="m_employeebtn" layoutX="30.0" layoutY="138.0" mnemonicParsing="false" onAction="#switchform" prefHeight="48.0" prefWidth="141.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Employees">
+                                    <Button fx:id="m_employeebtn" layoutX="38.0" layoutY="145.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="120.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Employees">
                                        <font>
                                           <Font name="Bradley Hand Bold" size="13.0" />
                                        </font></Button>
-                                    <ImageView fitHeight="119.0" fitWidth="165.0" layoutX="41.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="118.0" fitWidth="185.0" layoutX="58.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../img/add%20emp.png" />
+                                          <Image url="@../../../img/add emp.png" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Pane layoutX="303.0" layoutY="95.0" prefHeight="198.0" prefWidth="200.0" stylesheets="@dashn.css">
+                              <Pane layoutX="274.0" layoutY="233.0" prefHeight="244.0" prefWidth="219.0" stylesheets="@dashn.css">
                                  <styleClass>
                                     <String fx:value="pane" />
                                     <String fx:value="radius" />
                                  </styleClass>
                                  <children>
-                                    <Button fx:id="m_cudbtn" layoutX="30.0" layoutY="136.0" mnemonicParsing="false" onAction="#switchform" prefHeight="48.0" prefWidth="141.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Customers">
+                                    <Button fx:id="m_cudbtn" layoutX="41.0" layoutY="141.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="120.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Customers">
                                        <font>
                                           <Font name="Bradley Hand Bold" size="13.0" />
                                        </font></Button>
-                                    <ImageView fitHeight="119.0" fitWidth="165.0" layoutX="52.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="119.0" fitWidth="165.0" layoutX="50.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../img/add%20cust.png" />
+                                          <Image url="@../../../img/add cust.png" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Pane layoutX="572.0" layoutY="89.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@dashn.css">
+                              <Pane layoutX="528.0" layoutY="229.0" prefHeight="252.0" prefWidth="220.0" stylesheets="@dashn.css">
                                  <styleClass>
                                     <String fx:value="pane" />
                                     <String fx:value="radius" />
                                  </styleClass>
                                  <children>
-                                    <Button fx:id="m_prodbtn" layoutX="12.0" layoutY="147.0" mnemonicParsing="false" onAction="#switchform" prefHeight="46.0" prefWidth="176.0" styleClass="ctbuttons" stylesheets="@dashn.css" text=" Product Type and Items">
+                                    <Button fx:id="m_invenbtn" layoutX="45.0" layoutY="144.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="120.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Inventory">
                                        <font>
                                           <Font name="Bradley Hand Bold" size="13.0" />
                                        </font></Button>
-                                    <ImageView fitHeight="119.0" fitWidth="165.0" layoutX="48.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../img/acc.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </Pane>
-                              <Pane layoutX="315.0" layoutY="350.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@dashn.css">
-                                 <styleClass>
-                                    <String fx:value="pane" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <children>
-                                    <Button fx:id="m_invenbtn" layoutX="12.0" layoutY="141.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="177.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Inventory">
-                                       <font>
-                                          <Font name="Bradley Hand Bold" size="13.0" />
-                                       </font></Button>
-                                    <ImageView fitHeight="119.0" fitWidth="165.0" layoutX="18.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="119.0" fitWidth="165.0" layoutX="28.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../img/equip.jpeg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </Pane>
-                              <Pane layoutX="26.0" layoutY="350.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@dashn.css">
-                                 <styleClass>
-                                    <String fx:value="pane" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <children>
-                                    <Button fx:id="m_accessbtn" layoutX="30.0" layoutY="138.0" mnemonicParsing="false" onAction="#switchform" prefHeight="48.0" prefWidth="141.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Accessories">
-                                       <font>
-                                          <Font name="Bradley Hand Bold" size="13.0" />
-                                       </font></Button>
-                                    <ImageView fitHeight="115.0" fitWidth="169.0" layoutX="18.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../img/61-vduI8XRL._AC_UF894,1000_QL80_.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </Pane>
-                              <Pane layoutX="585.0" layoutY="350.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@dashn.css">
-                                 <styleClass>
-                                    <String fx:value="pane" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <children>
-                                    <Button fx:id="m_openbalbtn" layoutX="14.0" layoutY="138.0" mnemonicParsing="false" onAction="#switchform" prefHeight="48.0" prefWidth="170.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Enter Opening Balances">
-                                       <font>
-                                          <Font name="Bradley Hand Bold" size="13.0" />
-                                       </font></Button>
-                                    <ImageView fitHeight="119.0" fitWidth="165.0" layoutX="40.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../img/enter.png" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -466,54 +545,54 @@
                         </AnchorPane>
                         <AnchorPane fx:id="oderform" layoutX="4.0" layoutY="13.0" prefHeight="729.0" prefWidth="817.0" visible="false">
                            <children>
-                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="302.0" prefWidth="797.0">
+                              <AnchorPane layoutX="18.0" layoutY="14.0" prefHeight="302.0" prefWidth="797.0">
                                  <children>
-                                    <TextField layoutX="14.0" layoutY="59.0" prefHeight="37.0" prefWidth="317.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
-                                    <Label layoutX="62.0" layoutY="14.0" text="Ordering" textFill="WHITE">
+                                    <TextField fx:id="order_search" layoutX="28.0" layoutY="14.0" onAction="#searchAction" prefHeight="30.0" prefWidth="250.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
+                                    <Label layoutX="27.0" layoutY="65.0" text="Ordering" textFill="WHITE">
                                        <font>
                                           <Font name="Bodoni 72 Bold" size="36.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="475.0" layoutY="120.0" text="Item" textFill="WHITE">
+                                    <Label layoutX="364.0" layoutY="151.0" text="Item" textFill="WHITE">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="27.0" layoutY="234.0" text="Employee" textFill="WHITE">
+                                    <Label layoutX="28.0" layoutY="234.0" text="Employee" textFill="WHITE">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="28.0" layoutY="182.0" prefHeight="18.0" prefWidth="58.0" text="Customer" textFill="WHITE">
+                                    <Label layoutX="27.0" layoutY="192.0" prefHeight="18.0" prefWidth="58.0" text="Customer" textFill="WHITE">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="28.0" layoutY="142.0" text="Date" textFill="WHITE">
+                                    <Label layoutX="28.0" layoutY="149.0" text="Date" textFill="WHITE">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="475.0" layoutY="164.0" text="QTY" textFill="WHITE">
+                                    <Label layoutX="363.0" layoutY="192.0" text="QTY" textFill="WHITE">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="467.0" layoutY="213.0" prefHeight="15.0" prefWidth="43.0" text="Weight" textFill="WHITE">
+                                    <Label layoutX="363.0" layoutY="234.0" prefHeight="15.0" prefWidth="43.0" text="Weight" textFill="WHITE">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="Order_tx_item" layoutX="528.0" layoutY="116.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <TextField fx:id="Order_tx_Weight" layoutX="528.0" layoutY="209.0" promptText="Enter in Grams" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <Button layoutX="384.0" layoutY="256.0" mnemonicParsing="false" onAction="#addOrder" prefHeight="34.0" prefWidth="76.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="ADD" />
-                                    <Button layoutX="474.0" layoutY="256.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="81.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="UPDATE" />
-                                    <Button layoutX="565.0" layoutY="256.0" mnemonicParsing="false" onAction="#OrderDelete" prefHeight="34.0" prefWidth="80.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="CANCEL" />
-                                    <Button layoutX="656.0" layoutY="255.0" mnemonicParsing="false" onAction="#addOrderClear" prefHeight="35.0" prefWidth="71.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="CLEAR" />
-                                    <DatePicker fx:id="Order_date" layoutX="120.0" layoutY="134.0" prefHeight="25.0" prefWidth="158.0" promptText="Select the Date" />
-                                    <ComboBox fx:id="Order_tx_Customer" layoutX="119.0" layoutY="179.0" prefHeight="26.0" prefWidth="163.0" />
+                                    <TextField fx:id="Order_tx_item" layoutX="447.0" layoutY="143.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <TextField fx:id="Order_tx_Weight" layoutX="447.0" layoutY="228.0" promptText="Enter in Grams" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <Button layoutX="653.0" layoutY="94.0" mnemonicParsing="false" onAction="#addOrder" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="ADD" />
+                                    <Button layoutX="653.0" layoutY="144.0" mnemonicParsing="false" onAction="#updateOrder" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="UPDATE" />
+                                    <Button layoutX="653.0" layoutY="194.0" mnemonicParsing="false" onAction="#OrderDelete" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="CANCEL" />
+                                    <Button layoutX="653.0" layoutY="244.0" mnemonicParsing="false" onAction="#addOrderClear" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="CLEAR" />
+                                    <DatePicker fx:id="Order_date" layoutX="120.0" layoutY="145.0" prefHeight="26.0" prefWidth="163.0" promptText="Select the Date" />
+                                    <ComboBox fx:id="Order_tx_Customer" layoutX="120.0" layoutY="188.0" prefHeight="26.0" prefWidth="163.0" />
                                     <ComboBox fx:id="Order_tx_Employee" layoutX="119.0" layoutY="230.0" prefHeight="26.0" prefWidth="163.0" />
-                                    <Spinner fx:id="Order_tx_QTY" layoutX="529.0" layoutY="161.0" onMouseClicked="#orderQuantity" />
+                                    <Spinner fx:id="Order_tx_QTY" layoutX="447.0" layoutY="188.0" onMouseClicked="#orderQuantity" prefHeight="26.0" prefWidth="160.0" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="22.0" layoutY="300.0" prefHeight="415.0" prefWidth="789.0">
@@ -521,11 +600,11 @@
                                     <TableView fx:id="Order_Table" layoutX="8.0" layoutY="14.0" onMouseClicked="#addOrderSelect" prefHeight="400.0" prefWidth="773.0" stylesheets="@dashn.css">
                                       <columns>
                                         <TableColumn fx:id="Order_col_Date" prefWidth="115.0" text="Date" />
-                                          <TableColumn fx:id="Order_col_Customer" prefWidth="108.0" text="Customer" />
-                                          <TableColumn fx:id="Order_col_Employee" prefWidth="137.0" text="Employee" />
-                                          <TableColumn fx:id="Order_col_Item" prefWidth="138.0" text="Item" />
-                                          <TableColumn fx:id="Order_col_QTY" prefWidth="82.0" text="QTY" />
-                                          <TableColumn fx:id="Order_col_Weight" prefWidth="115.0" text="Weight" />
+                                          <TableColumn fx:id="Order_col_Customer" prefWidth="134.0" text="Customer" />
+                                          <TableColumn fx:id="Order_col_Employee" prefWidth="140.0" text="Employee" />
+                                          <TableColumn fx:id="Order_col_Item" prefWidth="140.0" text="Item" />
+                                          <TableColumn fx:id="Order_col_QTY" prefWidth="100.0" text="QTY" />
+                                          <TableColumn fx:id="Order_col_Weight" prefWidth="134.0" text="Weight" />
                                       </columns>
                                        <styleClass>
                                           <String fx:value="table-column" />
@@ -536,7 +615,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="billing_form" layoutX="19.0" layoutY="14.0" prefHeight="728.0" prefWidth="796.0" visible="false">
+                        <AnchorPane fx:id="billing_form" layoutX="15.0" layoutY="14.0" prefHeight="728.0" prefWidth="796.0" visible="false">
                            <children>
                               <TabPane layoutX="16.0" layoutY="98.0" prefHeight="601.0" prefWidth="769.0" tabClosingPolicy="UNAVAILABLE">
                                 <tabs>
@@ -544,401 +623,335 @@
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <Label layoutX="29.0" layoutY="125.0" prefHeight="0.0" prefWidth="33.0" text="Bill ID" textFill="WHITE">
+                                                <Label layoutX="22.0" layoutY="109.0" prefHeight="0.0" prefWidth="33.0" text="Bill ID" textFill="WHITE">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="15.0" layoutY="167.0" prefHeight="0.0" prefWidth="62.0" text="Order ID" textFill="WHITE">
+                                                <Label layoutX="22.0" layoutY="164.0" prefHeight="18.0" prefWidth="105.0" text="Employee Name" textFill="WHITE">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="528.0" layoutY="125.0" text="Date" textFill="WHITE">
+                                                <Label layoutX="24.0" layoutY="276.0" text="Date" textFill="WHITE">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField layoutX="14.0" layoutY="74.0" prefHeight="38.0" prefWidth="345.0" promptText="search" styleClass="ctsearch" stylesheets="@dashn.css" />
-                                                <Label layoutX="11.0" layoutY="206.0" prefHeight="0.0" prefWidth="103.0" text="Customer Name" textFill="WHITE">
+                                                <Label layoutX="23.0" layoutY="215.0" prefHeight="0.0" prefWidth="103.0" text="Customer Name" textFill="WHITE">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="527.0" layoutY="167.0" text="Total" textFill="WHITE">
+                                                <Label layoutX="416.0" layoutY="215.0" text="Price Per Gram" textFill="WHITE">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="527.0" layoutY="215.0" text="Amount" textFill="WHITE">
+                                                <Label layoutX="417.0" layoutY="276.0" text="Amount" textFill="WHITE">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="327.0" layoutY="14.0" text="Cash Bill" textFill="WHITE">
+                                                <Label layoutX="28.0" layoutY="27.0" text="Cash Bill" textFill="WHITE">
                                                    <font>
                                                       <Font name="Bodoni 72 Oldstyle Bold" size="36.0" />
                                                    </font>
                                                 </Label>
-                                                <Button layoutX="121.0" layoutY="329.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="131.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Pay" />
-                                                <Button layoutX="500.0" layoutY="329.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="131.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Bill" />
-                                                <TextField layoutX="153.0" layoutY="122.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <TextField layoutX="153.0" layoutY="163.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <TextField layoutX="153.0" layoutY="202.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <TextField layoutX="593.0" layoutY="163.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <TextField layoutX="593.0" layoutY="119.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <TextField layoutX="593.0" layoutY="211.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                             </children>
-                                          </AnchorPane>
-                                    </content>
-                                  </Tab>
-                                  <Tab text="Gold Bill">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                             <children>
-                                                <TextField layoutX="23.0" layoutY="77.0" prefHeight="38.0" prefWidth="325.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
-                                                <TextField layoutX="148.0" layoutY="125.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <TextField layoutX="148.0" layoutY="164.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <TextField layoutX="148.0" layoutY="207.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <TextField layoutX="579.0" layoutY="164.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <TextField layoutX="579.0" layoutY="126.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <TextField layoutX="579.0" layoutY="199.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <Label layoutX="323.0" layoutY="14.0" text="Gold Bill" textFill="WHITE">
+                                                <Button fx:id="CB_calWeBTN" layoutX="192.0" layoutY="424.0" mnemonicParsing="false" onAction="#calculateTotalWeight" prefHeight="27.0" prefWidth="122.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Calculate weight" />
+                                                <Button fx:id="CB_billBTN" layoutX="566.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#generatePDFBill" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Bill" />
+                                                <TextField fx:id="CB_ID" layoutX="155.0" layoutY="101.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                <TextField fx:id="CB_PPG" layoutX="512.0" layoutY="209.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                <TextField fx:id="CB_amount" layoutX="512.0" layoutY="269.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                <DatePicker fx:id="CB_Date" layoutX="158.0" layoutY="272.0" prefHeight="26.0" prefWidth="155.0" />
+                                                <TextField fx:id="CB_Item" layoutX="512.0" layoutY="102.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                <Label layoutX="414.0" layoutY="109.0" text="Item" textFill="WHITE">
                                                    <font>
-                                                      <Font name="Bodoni 72 Oldstyle Bold" size="36.0" />
+                                                      <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="57.0" layoutY="131.0" text="Bill ID" textFill="WHITE" />
-                                                <Label layoutX="42.0" layoutY="213.0" text="Customer Name" textFill="WHITE" />
-                                                <Label layoutX="49.0" layoutY="169.0" text="Order ID" textFill="WHITE" />
-                                                <Label layoutX="495.0" layoutY="169.0" text="Total" textFill="WHITE" />
-                                                <Label layoutX="487.0" layoutY="204.0" text="Amount" textFill="WHITE" />
-                                                <Label layoutX="494.0" layoutY="139.0" text="Date" textFill="WHITE" />
-                                                <Button layoutX="157.0" layoutY="354.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="100.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Pay" />
-                                                <Button layoutX="523.0" layoutY="347.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="100.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Receipt" />
+                                                <TextField fx:id="CB_weight" layoutX="155.0" layoutY="325.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                <Label layoutX="23.0" layoutY="332.0" text="Weight" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="24.0" layoutY="386.0" text="Total Weight" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="416.0" layoutY="164.0" text="Qty" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="CB_totalWei" layoutX="155.0" layoutY="379.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                <TextField fx:id="CB_Qty" layoutX="512.0" layoutY="158.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                <Button fx:id="CB_AmoCaBTN" layoutX="542.0" layoutY="312.0" mnemonicParsing="false" onMouseClicked="#calculateTotalAmount" prefHeight="27.0" prefWidth="132.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Calculate Amount" />
+                                                <ComboBox fx:id="CB_EmpName" layoutX="158.0" layoutY="160.0" prefHeight="26.0" prefWidth="156.0" />
+                                                <ComboBox fx:id="CB_CusName" layoutX="158.0" layoutY="211.0" prefHeight="26.0" prefWidth="156.0" />
                                              </children>
                                           </AnchorPane>
                                     </content>
                                   </Tab>
                                 </tabs>
                               </TabPane>
-                              <Label layoutX="37.0" layoutY="31.0" prefHeight="51.0" prefWidth="136.0" text="Billing" textFill="WHITE">
+                              <Label layoutX="34.0" layoutY="24.0" prefHeight="51.0" prefWidth="136.0" text="Billing" textFill="WHITE">
                                  <font>
                                     <Font name="Bodoni 72 Bold" size="36.0" />
                                  </font>
                               </Label>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="payroll_form" layoutX="19.0" layoutY="14.0" prefHeight="728.0" prefWidth="802.0" visible="false">
+                        <AnchorPane fx:id="payroll_form" layoutX="12.0" layoutY="12.0" prefHeight="728.0" prefWidth="802.0" visible="false">
                            <children>
-                              <Label layoutX="56.0" layoutY="38.0" prefHeight="71.0" prefWidth="159.0" text="Payroll" textFill="WHITE">
+                              <Label layoutX="79.0" layoutY="50.0" prefHeight="71.0" prefWidth="159.0" text="Payroll" textFill="WHITE">
                                  <font>
                                     <Font name="Bodoni 72 Bold" size="36.0" />
                                  </font>
                               </Label>
-                              <Pane layoutX="47.0" layoutY="142.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@dashn.css">
+                              <Pane layoutX="78.0" layoutY="214.0" prefHeight="300.0" prefWidth="320.0" styleClass="pane" stylesheets="@dashn.css">
                                  <children>
-                                    <Button fx:id="p_allowancebtn" layoutX="61.0" layoutY="161.0" mnemonicParsing="false" onAction="#switchform" styleClass="ctbuttons" stylesheets="@dashn.css" text="Allowances" />
-                                    <ImageView fitHeight="140.0" fitWidth="176.0" layoutX="31.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <Button fx:id="p_allowancebtn" layoutX="118.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Salary" />
+                                    <ImageView fitHeight="227.0" fitWidth="221.0" layoutX="50.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../img/png-transparent-human-resource-management-system-salary-payment-pay-company-text-human-resource-management-thumbnail.png" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Pane layoutX="307.0" layoutY="142.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@dashn.css">
+                              <Pane layoutX="449.0" layoutY="214.0" prefHeight="300.0" prefWidth="320.0" styleClass="pane" stylesheets="@dashn.css">
                                  <children>
-                                    <Button fx:id="p_deductionbtn" layoutX="70.0" layoutY="161.0" mnemonicParsing="false" onAction="#switchform" styleClass="ctbuttons" stylesheets="@dashn.css" text="Deductions" />
-                                    <ImageView fitHeight="140.0" fitWidth="176.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <Button fx:id="p_deductionbtn" layoutX="118.0" layoutY="244.0" mnemonicParsing="false" onAction="#switchform" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Payment" />
+                                    <ImageView fitHeight="221.0" fitWidth="233.0" layoutX="44.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../img/tax-elements-income-tax-money-payment-tax-deduction-tax-law-sales-tax-tax-refund-png-clipart.jpg" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Pane layoutX="575.0" layoutY="142.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@dashn.css">
-                                 <children>
-                                    <Button fx:id="p_salaryincrementbtn" layoutX="46.0" layoutY="160.0" mnemonicParsing="false" onAction="#switchform" styleClass="ctbuttons" stylesheets="@dashn.css" text="Salary Increment" />
-                                    <ImageView fitHeight="140.0" fitWidth="176.0" layoutX="25.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../img/WhatsApp%20Image%202024-03-30%20at%2020.17.17.jpeg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </Pane>
-                              <Pane layoutX="153.0" layoutY="387.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@dashn.css">
-                                 <children>
-                                    <Button fx:id="p_saadvanbtn" layoutX="46.0" layoutY="160.0" mnemonicParsing="false" onAction="#switchform" styleClass="ctbuttons" stylesheets="@dashn.css" text="Salary Advance" />
-                                    <ImageView fitHeight="140.0" fitWidth="176.0" layoutX="30.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../img/payment-bank-finance-debt-management-png-favpng-5rDTpkTuPzbrBLHWT6uh0WSar_t.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </Pane>
-                              <Pane layoutX="432.0" layoutY="387.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@dashn.css">
-                                 <children>
-                                    <Button fx:id="p_paybtn" layoutX="74.0" layoutY="160.0" mnemonicParsing="false" onAction="#switchform" styleClass="ctbuttons" stylesheets="@dashn.css" text="Payment" />
-                                    <ImageView fitHeight="140.0" fitWidth="176.0" layoutX="30.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../img/1332014.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </Pane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="analytics_form" layoutX="8.0" layoutY="19.0" prefHeight="719.0" prefWidth="811.0" visible="false">
-                           <children>
-                              <Label layoutX="52.0" layoutY="41.0" text="Analytics" textFill="WHITE">
-                                 <font>
-                                    <Font name="Bodoni 72 Bold" size="36.0" />
-                                 </font>
-                              </Label>
-                           </children>
+                        <AnchorPane fx:id="calendar_form" layoutX="8.0" layoutY="19.0" prefHeight="719.0" prefWidth="811.0" visible="false">
+                           <FlowPane fx:id="calendar" hgap="10.0" layoutX="35.0" layoutY="122.0" prefHeight="567.0" prefWidth="745.0" style="-fx-background-color: #d5cda4;" vgap="5.0" />
+                           <HBox alignment="CENTER" layoutX="163.0" layoutY="14.0" prefHeight="44.0" prefWidth="419.0" spacing="5.0">
+                              <children>
+                                 <Button mnemonicParsing="false" onAction="#backOneMonth" style="-fx-background-color: #FFFFFF;" text="&lt;" />
+                                 <Text fx:id="year" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="####">
+                                    <font>
+                                       <Font size="22.0" />
+                                    </font>
+                                 </Text>
+                                 <Text fx:id="month" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="####">
+                                    <font>
+                                       <Font size="22.0" />
+                                    </font>
+                                 </Text>
+                                 <Button mnemonicParsing="false" onAction="#forwardOneMonth" style="-fx-background-color: #FFFFFF;" text="&gt;" />
+                              </children>
+                           </HBox>
+                           <HBox alignment="CENTER" layoutX="35.0" layoutY="78.0" prefHeight="44.0" prefWidth="745.0" spacing="88.75" style="-fx-background-color: #F0F0F0;">
+                              <children>
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Sun" textAlignment="CENTER" />
+                                 <Text layoutX="213.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Mon" textAlignment="CENTER" />
+                                 <Text layoutX="222.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Tue" textAlignment="CENTER" />
+                                 <Text layoutX="232.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Wed" textAlignment="CENTER" />
+                                 <Text layoutX="241.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Thu" textAlignment="CENTER" />
+                                 <Text layoutX="251.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Fri" textAlignment="CENTER" />
+                                 <Text layoutX="266.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #000000;" text="Sat" textAlignment="CENTER" />
+                              </children>
+                              <padding>
+                                 <Insets right="9.0" />
+                              </padding>
+                           </HBox>
                         </AnchorPane>
-                        <AnchorPane fx:id="inquiry_form" layoutX="10.0" layoutY="15.0" prefHeight="728.0" prefWidth="805.0" visible="false">
+                        <AnchorPane fx:id="inquiry_form" layoutX="10.0" layoutY="11.0" prefHeight="728.0" prefWidth="805.0" visible="false">
                            <children>
-                              <Label layoutX="62.0" layoutY="40.0" prefHeight="45.0" prefWidth="141.0" text="Inquiry" textFill="WHITE">
-                                 <font>
-                                    <Font name="Bodoni 72 Bold" size="36.0" />
-                                 </font>
-                              </Label>
-                              <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="306.0" prefWidth="787.0">
+                              <AnchorPane layoutX="24.0" layoutY="26.0" prefHeight="523.0" prefWidth="745.0">
                                  <children>
-                                    <Label layoutX="309.0" layoutY="14.0" text="Create Inquiry" textFill="WHITE">
-                                       <font>
-                                          <Font name="Bodoni 72 Oldstyle Bold" size="24.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="27.0" layoutY="110.0" text="Email" textFill="WHITE">
+                                    <Label layoutX="32.0" layoutY="195.0" text="Subject" textFill="WHITE">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="186.0" layoutY="104.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <Label layoutX="29.0" layoutY="157.0" text="Customer Name" textFill="WHITE">
+                                    <TextField fx:id="txtIqSubject" layoutX="187.0" layoutY="189.0" prefHeight="31.0" prefWidth="526.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <Label layoutX="32.0" layoutY="259.0" text="Description" textFill="WHITE">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="186.0" layoutY="151.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <Label layoutX="27.0" layoutY="203.0" text="Order ID" textFill="WHITE">
+                                    <TextArea fx:id="txtIqDescription" layoutX="188.0" layoutY="252.0" prefHeight="175.0" prefWidth="525.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <TextField fx:id="txtIqEmail" layoutX="187.0" layoutY="130.0" prefHeight="31.0" prefWidth="527.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <Label layoutX="32.0" layoutY="136.0" prefHeight="20.0" prefWidth="120.0" text="Customer's Email" textFill="WHITE">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="186.0" layoutY="197.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <Label layoutX="21.0" layoutY="252.0" text="Product Name " textFill="WHITE">
+                                    <Button fx:id="btnIqSend" layoutX="627.0" layoutY="468.0" mnemonicParsing="false" onAction="#IqSendEmail" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Send" />
+                                    <Label layoutX="24.0" layoutY="32.0" prefHeight="45.0" prefWidth="141.0" text="Inquiry" textFill="WHITE">
                                        <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField layoutX="186.0" layoutY="246.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <Label layoutX="416.0" layoutY="64.0" text="Description" textFill="WHITE">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <TextArea layoutX="512.0" layoutY="53.0" prefHeight="175.0" prefWidth="246.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <TextField layoutX="186.0" layoutY="58.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <Label layoutX="32.0" layoutY="64.0" text="Inquiry ID" textFill="WHITE">
-                                       <font>
-                                          <Font size="16.0" />
+                                          <Font name="Bodoni 72 Bold" size="36.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="allowances_form" layoutX="11.0" layoutY="15.0" prefHeight="732.0" prefWidth="814.0" visible="false">
+                        <AnchorPane fx:id="allowances_form" layoutX="7.0" layoutY="16.0" prefHeight="732.0" prefWidth="814.0" visible="false">
                            <children>
-                              <Label layoutX="65.0" layoutY="14.0" text="Allowances" textFill="WHITE">
+                              <Label layoutX="34.0" layoutY="21.0" text="Salary Allowances" textFill="WHITE">
                                  <font>
                                     <Font name="Bodoni 72 Bold" size="36.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtAllowancesEmpID" layoutX="101.0" layoutY="79.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField fx:id="txtAllowancesEmpName" layoutX="101.0" layoutY="136.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="13.0" layoutY="82.0" text="Employee ID" textFill="WHITE">
+                              <TextField fx:id="txtAllowancesEmpID" layoutX="141.0" layoutY="106.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="txtAllowancesEmpName" layoutX="141.0" layoutY="156.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="34.0" layoutY="112.0" text="Employee ID" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="142.0" text="Name" textFill="WHITE">
+                              <Label layoutX="34.0" layoutY="162.0" text="Name" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="200.0" text="Basic Salary" textFill="WHITE">
+                              <Label layoutX="35.0" layoutY="215.0" text="Basic Salary" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtAllowancesBSalary" layoutX="101.0" layoutY="194.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TableView fx:id="AllowanceDetailTable" layoutX="23.0" layoutY="346.0" prefHeight="372.0" prefWidth="784.0">
+                              <TextField fx:id="txtAllowancesBSalary" layoutX="141.0" layoutY="209.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TableView fx:id="AllowanceDetailTable" layoutX="23.0" layoutY="362.0" onMouseClicked="#addSalaryAllowanceSelect" prefHeight="356.0" prefWidth="784.0">
                                 <columns>
-                                  <TableColumn fx:id="empIDColumn" prefWidth="102.0" text="ID" />
-                                  <TableColumn fx:id="empNameColumn" prefWidth="174.0" text="Name" />
-                                    <TableColumn fx:id="BsalaryColumn" prefWidth="129.0" text="Basic Salary" />
-                                    <TableColumn fx:id="totalOTColumn" prefWidth="126.0" text="Total OT" />
-                                    <TableColumn fx:id="ratesPerHrColumn" prefWidth="122.0" text="Rates per Hour" />
-                                    <TableColumn fx:id="totalAmountColumn" prefWidth="126.0" text="Total Amount" />
+                                  <TableColumn fx:id="empIDColumn" prefWidth="65.0" text="ID" />
+                                  <TableColumn fx:id="empNameColumn" prefWidth="92.0" text="Name" />
+                                    <TableColumn fx:id="BsalaryColumn" prefWidth="102.0" text="Basic Salary" />
+                                    <TableColumn fx:id="totalOTColumn" prefWidth="82.0" text="Total OT" />
+                                    <TableColumn fx:id="ratesPerHrColumn" prefWidth="103.0" text="Rates per Hour" />
+                                    <TableColumn fx:id="deductionColumn" prefWidth="83.0" text="Deduction" />
+                                    <TableColumn fx:id="incrementColumn" prefWidth="76.0" text="Increment" />
+                                    <TableColumn fx:id="advanceColumn" prefWidth="75.0" text="Advance" />
+                                    <TableColumn fx:id="totalAmountColumn" prefWidth="98.0" text="Total Amount" />
                                 </columns>
                               </TableView>
-                              <TextField fx:id="txtAllowancesTotalOT" layoutX="621.0" layoutY="79.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField fx:id="txtAllowancesRatesperHr" layoutX="621.0" layoutY="121.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="537.0" layoutY="85.0" text=" Total OT" textFill="WHITE">
+                              <TextField fx:id="txtAllowancesTotalOT" layoutX="141.0" layoutY="257.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="txtAllowancesRatesperHr" layoutX="141.0" layoutY="304.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="34.0" layoutY="263.0" text=" Total OT" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="515.0" layoutY="127.0" text="Rate Per Hour" textFill="WHITE">
+                              <Label layoutX="34.0" layoutY="310.0" text="Rate Per Hour" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="496.0" layoutY="171.0" text="Total Amount" textFill="WHITE">
+                              <Label layoutX="373.0" layoutY="261.0" text="Total Amount" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtAllowancesTotalamount" layoutX="621.0" layoutY="167.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Button fx:id="addbtnAllowances" layoutX="222.0" layoutY="295.0" mnemonicParsing="false" onAction="#addAllowance" prefHeight="37.0" prefWidth="64.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
-                              <Button fx:id="updateBtnallowances" layoutX="344.0" layoutY="297.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="67.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
-                              <Button fx:id="calculatebtnAllowances" layoutX="468.0" layoutY="296.0" mnemonicParsing="false" onAction="#calculateTotalAmount" prefHeight="35.0" prefWidth="79.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Calculate" />
-                              <Button fx:id="clearbtnAllowances" layoutX="595.0" layoutY="296.0" mnemonicParsing="false" onAction="#clearFieldsA" prefHeight="34.0" prefWidth="73.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                              <TextField fx:id="txtAllowancesIncrement" layoutX="536.0" layoutY="156.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Button fx:id="addbtnAllowances" layoutX="373.0" layoutY="307.0" mnemonicParsing="false" onAction="#addAllowance" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
+                              <Button fx:id="updateBtnallowances" layoutX="465.0" layoutY="307.0" mnemonicParsing="false" onAction="#updateAllowance" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
+                              <Button fx:id="calculatebtnAllowances" layoutX="708.0" layoutY="257.0" mnemonicParsing="false" onAction="#calculateTotalAmount" prefHeight="31.0" prefWidth="80.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Calculate" />
+                              <Button fx:id="clearbtnAllowances" layoutX="649.0" layoutY="307.0" mnemonicParsing="false" onAction="#clearFieldsA" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                              <TextField fx:id="txtAllowancesDeduction" layoutX="536.0" layoutY="106.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="txtAllowancesAdvance" layoutX="536.0" layoutY="209.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="txtAllowancesTotalamount" layoutX="536.0" layoutY="257.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="373.0" layoutY="110.0" text="Salary Deduction" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                              <Label layoutX="374.0" layoutY="160.0" text="Salary Increment" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="373.0" layoutY="213.0" text="Salary Advance" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="deletebtnAllowances" layoutX="557.0" layoutY="307.0" mnemonicParsing="false" onAction="#deleteAllowance" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
                            </children></AnchorPane>
                         <AnchorPane fx:id="deduction_form" layoutX="11.0" layoutY="8.0" prefHeight="738.0" prefWidth="810.0" visible="false">
                            <children>
-                              <Label layoutX="40.0" layoutY="26.0" text="Deductions" textFill="WHITE">
+                              <Label layoutX="40.0" layoutY="26.0" text="Payments" textFill="WHITE">
                                  <font>
                                     <Font name="Bodoni 72 Bold" size="36.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="107.0" layoutY="91.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="15.0" layoutY="96.0" text="Employee ID" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
-                              <Label layoutX="22.0" layoutY="131.0" text=" Name" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
-                              <TextField layoutX="107.0" layoutY="127.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="15.0" layoutY="169.0" text=" Basic Salary" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
-                              <TextField layoutX="107.0" layoutY="164.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="439.0" layoutY="88.0" text="  Deduction By" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
-                              <RadioButton layoutX="557.0" layoutY="87.0" mnemonicParsing="false" text="Percentage" textFill="WHITE">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="Deduction" />
-                                 </toggleGroup>
+                              <TableView fx:id="paymentTable" layoutX="14.0" layoutY="141.0" prefHeight="457.0" prefWidth="506.0">
+                                <columns>
+                                  <TableColumn fx:id="statusIDColumn" prefWidth="75.0" text="ID" />
+                                  <TableColumn fx:id="statusNameColumn" prefWidth="104.0" text="Name" />
+                                    <TableColumn fx:id="statusAdvanceColumn" prefWidth="130.0" text="Advance" />
+                                    <TableColumn fx:id="statusTotalamountColumn" prefWidth="187.0" text="Total Salary" />
+                                </columns>
+                              </TableView>
+                              <ImageView fx:id="paymentImage" fitHeight="150.0" fitWidth="154.0" layoutX="595.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true" />
+                              <Button layoutX="623.0" layoutY="414.0" mnemonicParsing="false" onAction="#generatePDFPayment" prefHeight="45.0" prefWidth="97.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Print Invoice" />
+                              <Label layoutX="625.0" layoutY="376.0" text="Scan QR Code" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
-                              </RadioButton>
-                              <RadioButton layoutX="675.0" layoutY="88.0" mnemonicParsing="false" text="Amount" textFill="WHITE" toggleGroup="$Deduction">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></RadioButton>
-                              <Label layoutX="443.0" layoutY="123.0" text="  Percentage" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
-                              <Label layoutX="618.0" layoutY="124.0" text="  Amount" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
-                              <TextField layoutX="525.0" layoutY="119.0" prefHeight="21.0" prefWidth="83.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField layoutX="685.0" layoutY="120.0" prefHeight="21.0" prefWidth="83.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="443.0" layoutY="161.0" text="  Reason" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
-                              <TextField layoutX="524.0" layoutY="157.0" prefHeight="31.0" prefWidth="244.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="243.0" layoutY="212.0" text="  Total Deduction" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
-                              <TextField layoutX="396.0" layoutY="206.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="252.0" layoutY="246.0" text="Salary After Deduction" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
-                              <TextField layoutX="397.0" layoutY="240.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Button layoutX="252.0" layoutY="302.0" mnemonicParsing="false" styleClass="ctbuttons" stylesheets="@dashn.css" text="Save" />
-                              <Button layoutX="328.0" layoutY="302.0" mnemonicParsing="false" styleClass="ctbuttons" stylesheets="@dashn.css" text="Calculate" />
-                              <Button layoutX="424.0" layoutY="302.0" mnemonicParsing="false" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
-                              <Button layoutX="516.0" layoutY="302.0" mnemonicParsing="false" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
-                              <TableView layoutX="22.0" layoutY="341.0" prefHeight="378.0" prefWidth="788.0">
-                                <columns>
-                                  <TableColumn prefWidth="75.0" text="ID" />
-                                  <TableColumn prefWidth="104.0" text="Name" />
-                                    <TableColumn prefWidth="130.0" text="D Percentage/Amount" />
-                                    <TableColumn prefWidth="183.0" text="Reason" />
-                                    <TableColumn prefWidth="142.0" text="Total Deduction" />
-                                    <TableColumn prefWidth="151.0" text="New Salary" />
-                                </columns>
-                              </TableView>
+                              </Label>
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="salaryincrement_form" layoutX="8.0" layoutY="13.0" prefHeight="735.0" prefWidth="814.0" visible="false">
                            <children>
-                              <Label layoutX="40.0" layoutY="47.0" text="Salary Increment" textFill="WHITE">
+                              <Label layoutX="40.0" layoutY="43.0" text="Salary Increment" textFill="WHITE">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="135.0" layoutY="266.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="39.0" layoutY="270.0" text="Employee ID" textFill="WHITE">
+                              <TextField layoutX="148.0" layoutY="178.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="42.0" layoutY="184.0" text="Employee ID" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="58.0" layoutY="316.0" text=" Name" textFill="WHITE">
+                              <Label layoutX="40.0" layoutY="231.0" text=" Name" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="135.0" layoutY="312.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="40.0" layoutY="372.0" text="Basic Salary" textFill="WHITE">
+                              <TextField layoutX="148.0" layoutY="227.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="43.0" layoutY="287.0" text="Basic Salary" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="135.0" layoutY="368.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="378.0" layoutY="270.0" text="Update Salary by" textFill="WHITE">
+                              <TextField layoutX="148.0" layoutY="281.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="378.0" layoutY="184.0" text="Update Salary by" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <RadioButton layoutX="512.0" layoutY="270.0" mnemonicParsing="false" text="Percentage" textFill="#fffefe">
+                              <RadioButton layoutX="525.0" layoutY="185.0" mnemonicParsing="false" text="Percentage" textFill="#fffefe">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="update" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton layoutX="678.0" layoutY="270.0" mnemonicParsing="false" text="Amount" textFill="#fffefe" toggleGroup="$update" />
-                              <Label layoutX="378.0" layoutY="316.0" text="Percentage" textFill="WHITE">
+                              <RadioButton layoutX="630.0" layoutY="186.0" mnemonicParsing="false" text="Amount" textFill="#fffefe" toggleGroup="$update" />
+                              <Label layoutX="378.0" layoutY="231.0" text="Percentage" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="469.0" layoutY="312.0" prefHeight="26.0" prefWidth="116.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="598.0" layoutY="316.0" text="Amount" textFill="WHITE">
+                              <TextField layoutX="468.0" layoutY="227.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="378.0" layoutY="287.0" text="Amount" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="665.0" layoutY="312.0" prefHeight="26.0" prefWidth="126.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Button layoutX="191.0" layoutY="433.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="73.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
-                              <Button layoutX="321.0" layoutY="433.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="73.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Edit" />
-                              <Button layoutX="454.0" layoutY="433.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="73.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                              <TextField layoutX="468.0" layoutY="281.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Button layoutX="432.0" layoutY="361.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
+                              <Button layoutX="530.0" layoutY="361.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Edit" />
+                              <Button layoutX="628.0" layoutY="361.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="salaryadvance_form" layoutX="11.0" layoutY="15.0" prefHeight="725.0" prefWidth="808.0" visible="false">
@@ -948,96 +961,96 @@
                                     <Font size="36.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="22.0" layoutY="106.0" text="Employee ID" textFill="#fffdfd">
+                              <Label layoutX="43.0" layoutY="157.0" text="Employee ID" textFill="#fffdfd">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="124.0" layoutY="103.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="22.0" layoutY="147.0" text="Name" textFill="#fffdfd">
+                              <TextField layoutX="141.0" layoutY="151.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="43.0" layoutY="204.0" text="Name" textFill="#fffdfd">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="124.0" layoutY="144.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="22.0" layoutY="200.0" text="Basic Salary" textFill="#fffdfd">
+                              <TextField layoutX="141.0" layoutY="198.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="41.0" layoutY="250.0" text="Basic Salary" textFill="#fffdfd">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="124.0" layoutY="196.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="410.0" layoutY="106.0" text="Advance Amount" textFill="#fffdfd">
+                              <TextField layoutX="141.0" layoutY="244.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="389.0" layoutY="157.0" text="Advance Amount" textFill="#fffdfd">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="571.0" layoutY="103.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="404.0" layoutY="170.0" text="Updated Salary" textFill="#fffdfd">
+                              <TextField layoutX="527.0" layoutY="151.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="389.0" layoutY="204.0" text="Updated Salary" textFill="#fffdfd">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="571.0" layoutY="167.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField layoutX="527.0" layoutY="198.0" styleClass="textfield" stylesheets="@dashn.css" />
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="payment_form" layoutX="14.0" layoutY="14.0" prefHeight="730.0" prefWidth="806.0" visible="false">
                            <children>
-                              <Label layoutX="42.0" layoutY="23.0" text="Payment" textFill="WHITE">
+                              <Label layoutX="37.0" layoutY="31.0" text="Payment" textFill="WHITE">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="22.0" layoutY="111.0" text="Employee ID" textFill="WHITE">
+                              <Label layoutX="26.0" layoutY="127.0" text="Employee ID" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="140.0" layoutY="105.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="23.0" layoutY="158.0" text="Name" textFill="WHITE">
+                              <TextField layoutX="140.0" layoutY="121.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="27.0" layoutY="174.0" text="Name" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="140.0" layoutY="162.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="23.0" layoutY="214.0" text="Basic Salary" textFill="WHITE">
+                              <TextField layoutX="140.0" layoutY="168.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="27.0" layoutY="223.0" text="Basic Salary" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="140.0" layoutY="211.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Label layoutX="24.0" layoutY="265.0" text="New Salary" textFill="WHITE">
+                              <TextField layoutX="140.0" layoutY="217.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Label layoutX="26.0" layoutY="268.0" text="New Salary" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
                               <TextField layoutX="140.0" layoutY="262.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Button layoutX="564.0" layoutY="168.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="127.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Generate  Slip" />
+                              <Button layoutX="403.0" layoutY="252.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="117.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Generate  Slip" />
                               <AnchorPane layoutX="19.0" layoutY="307.0" prefHeight="417.0" prefWidth="769.0">
                                  <children>
-                                    <Label layoutX="324.0" layoutY="14.0" text="Payment Slip" textFill="WHITE">
+                                    <Label layoutX="303.0" layoutY="24.0" text="Payment Slip" textFill="WHITE">
                                        <font>
                                           <Font size="25.0" />
                                        </font>
                                     </Label>
-                                    <Button layoutX="325.0" layoutY="354.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="93.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Print" />
+                                    <Button layoutX="325.0" layoutY="354.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Print" />
                                  </children>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="Employee_form" layoutX="4.0" layoutY="8.0" prefHeight="741.0" prefWidth="821.0" visible="false">
+                        <AnchorPane fx:id="Employee_form" layoutX="2.0" layoutY="8.0" prefHeight="741.0" prefWidth="821.0" visible="false">
                            <children>
-                              <Label layoutX="50.0" layoutY="72.0" text="Employees Details" textFill="WHITE">
+                              <Label layoutX="59.0" layoutY="95.0" text="Employees Details" textFill="WHITE">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="Emp_det_search" layoutX="21.0" layoutY="29.0" prefHeight="32.0" prefWidth="296.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
-                              <TextField fx:id="Emp_Det_TX_Empname" layoutX="189.0" layoutY="134.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField fx:id="Emp_Det_TX_TelNo" layoutX="189.0" layoutY="182.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField fx:id="Emp_Det_TX_Address" layoutX="189.0" layoutY="235.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField fx:id="Emp_Det_TX_Email" layoutX="189.0" layoutY="283.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField fx:id="Emp_Det_TX_NICNo" layoutX="613.0" layoutY="121.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TableView layoutX="14.0" layoutY="382.0" prefHeight="354.0" prefWidth="801.0">
+                              <TextField fx:id="Emp_det_search" layoutX="100.0" layoutY="37.0" prefHeight="30.0" prefWidth="250.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
+                              <TextField fx:id="Emp_Det_TX_Empname" layoutX="190.0" layoutY="182.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="Emp_Det_TX_TelNo" layoutX="190.0" layoutY="233.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="Emp_Det_TX_Address" layoutX="190.0" layoutY="285.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="Emp_Det_TX_Email" layoutX="190.0" layoutY="336.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="Emp_Det_TX_NICNo" layoutX="521.0" layoutY="182.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TableView fx:id="EmpDet_Table" layoutX="14.0" layoutY="382.0" onMouseClicked="#addEmployeeSelect" prefHeight="354.0" prefWidth="801.0">
                                 <columns>
                                   <TableColumn fx:id="Emp_Det_Col_Empname" prefWidth="116.0" text="Employee Name" />
                                   <TableColumn fx:id="Emp_Det_Col_TelNo" prefWidth="111.0" text="Telephone No" />
@@ -1047,94 +1060,95 @@
                                     <TableColumn fx:id="Emp_Det_Col_Salary" prefWidth="100.0" text="Salary" />
                                 </columns>
                               </TableView>
-                              <TextField fx:id="Emp_Det_TX_Salary" layoutX="620.0" layoutY="182.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <Button fx:id="Emp_Det_btn_add" layoutX="488.0" layoutY="262.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
-                              <Button fx:id="Emp_Det_btn_Update" layoutX="620.0" layoutY="262.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
-                              <Button fx:id="Emp_Det_btn_Clear" layoutX="620.0" layoutY="329.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
-                              <Button fx:id="Emp_Det_btn_delete" layoutX="488.0" layoutY="329.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
-                              <Label layoutX="49.0" layoutY="139.0" text="Employee Name" textFill="WHITE">
+                              <TextField fx:id="Emp_Det_TX_Salary" layoutX="521.0" layoutY="233.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <Button fx:id="Emp_Det_btn_add" layoutX="420.0" layoutY="329.0" mnemonicParsing="false" onAction="#addEmployeeAdd" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
+                              <Button fx:id="Emp_Det_btn_Update" layoutX="514.0" layoutY="329.0" mnemonicParsing="false" onAction="#addEmployeeUpdate" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
+                              <Button fx:id="Emp_Det_btn_Clear" layoutX="700.0" layoutY="329.0" mnemonicParsing="false" onAction="#addEmployeeClear" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                              <Button fx:id="Emp_Det_btn_delete" layoutX="607.0" layoutY="329.0" mnemonicParsing="false" onAction="#addEmployeeDelete" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
+                              <Label layoutX="59.0" layoutY="186.0" text="Employee Name" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="55.0" layoutY="186.0" text=" Telephone No" textFill="WHITE">
+                              <Label layoutX="54.0" layoutY="239.0" text=" Telephone No" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="60.0" layoutY="239.0" text=" Address" textFill="WHITE">
+                              <Label layoutX="59.0" layoutY="291.0" text=" Address" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="60.0" layoutY="287.0" text="Email" textFill="WHITE">
+                              <Label layoutX="59.0" layoutY="342.0" text="Email" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="488.0" layoutY="129.0" text="NIC No" textFill="WHITE">
+                              <Label layoutX="438.0" layoutY="188.0" text="NIC No" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="488.0" layoutY="186.0" text="Salary" textFill="WHITE">
+                              <Label layoutX="438.0" layoutY="239.0" text="Salary" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="customer_form" layoutX="8.0" layoutY="8.0" prefHeight="741.0" prefWidth="815.0" visible="false">
+                        <AnchorPane fx:id="customer_form" layoutX="7.0" layoutY="7.0" prefHeight="741.0" prefWidth="815.0" visible="false">
                            <children>
-                              <Label layoutX="59.0" layoutY="66.0" prefHeight="45.0" prefWidth="280.0" text="Customer Details" textFill="#fffefe">
+                              <Label layoutX="50.0" layoutY="77.0" prefHeight="45.0" prefWidth="280.0" text="Customer Details" textFill="#fffefe">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="39.0" layoutY="126.0" text="Customer Name" textFill="WHITE">
+                              <Label layoutX="50.0" layoutY="168.0" text="Customer Name" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="47.0" layoutY="215.0" text="Telephone No" textFill="WHITE">
+                              <Label layoutX="49.0" layoutY="274.0" text="Telephone No" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="64.0" layoutY="296.0" text="Address" textFill="WHITE">
+                              <Label layoutX="408.0" layoutY="222.0" text="Address" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="82.0" layoutY="253.0" text="Email" textFill="WHITE">
+                              <Label layoutX="408.0" layoutY="168.0" text="Email" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="68.0" layoutY="170.0" text="NIC No" textFill="WHITE">
+                              <Label layoutX="50.0" layoutY="222.0" text="NIC No" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <TableView fx:id="CusDet_Table" layoutY="334.0" onMouseClicked="#addCustomerSelect" prefHeight="403.0" prefWidth="812.0">
+                              <TableView fx:id="CusDet_Table" layoutX="8.0" layoutY="338.0" onMouseClicked="#addCustomerSelect" prefHeight="389.0" prefWidth="799.0">
                                 <columns>
-                                  <TableColumn fx:id="addCus_col_name" prefWidth="147.0" text="Customer Name" />
-                                    <TableColumn fx:id="addCus_col_NICno" prefWidth="137.0" text="NIC NO" />
-                                    <TableColumn fx:id="addCus_col_TelNo" prefWidth="140.0" text="Telephone NO" />
-                                    <TableColumn fx:id="addCus_col_email" prefWidth="155.0" text=" Email" />
-                                    <TableColumn fx:id="addCus_col_Address" prefWidth="168.0" text="Address" />
+                                  <TableColumn fx:id="addCus_col_name" prefWidth="162.0" text="Customer Name" />
+                                    <TableColumn fx:id="addCus_col_NICno" prefWidth="139.0" text="NIC NO" />
+                                    <TableColumn fx:id="addCus_col_TelNo" prefWidth="160.0" text="Telephone NO" />
+                                    <TableColumn fx:id="addCus_col_email" prefWidth="154.0" text=" Email" />
+                                    <TableColumn fx:id="addCus_col_Address" prefWidth="186.0" text="Address" />
                                 </columns>
                               </TableView>
-                              <TextField fx:id="addCusDet_Cusname" layoutX="167.0" layoutY="123.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField fx:id="addCusDet_CusNICno" layoutX="167.0" layoutY="164.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField fx:id="addCusDet_CusTelno" layoutX="167.0" layoutY="209.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField fx:id="addCusDet_CusEmail" layoutX="167.0" layoutY="249.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField fx:id="addCusDet_CusAdd" layoutX="167.0" layoutY="290.0" styleClass="textfield" stylesheets="@dashn.css" />
-                              <TextField layoutX="45.0" layoutY="34.0" prefHeight="32.0" prefWidth="280.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
-                              <Button layoutX="570.0" layoutY="88.0" mnemonicParsing="false" onAction="#addCustomerAdd" prefHeight="44.0" prefWidth="94.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
-                              <Button layoutX="570.0" layoutY="145.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="94.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
-                              <Button layoutX="570.0" layoutY="203.0" mnemonicParsing="false" onAction="#addCustomerDelete" prefHeight="44.0" prefWidth="94.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
-                              <Button layoutX="570.0" layoutY="262.0" mnemonicParsing="false" onAction="#addcustomerClear" prefHeight="44.0" prefWidth="94.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                              <TextField fx:id="addCusDet_Cusname" layoutX="170.0" layoutY="162.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="addCusDet_CusNICno" layoutX="170.0" layoutY="216.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="addCusDet_CusTelno" layoutX="170.0" layoutY="268.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="addCusDet_CusEmail" layoutX="505.0" layoutY="162.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField fx:id="addCusDet_CusAdd" layoutX="506.0" layoutY="216.0" styleClass="textfield" stylesheets="@dashn.css" />
+                              <TextField layoutX="82.0" layoutY="32.0" prefHeight="30.0" prefWidth="250.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
+                              <Button layoutX="399.0" layoutY="283.0" mnemonicParsing="false" onAction="#addCustomerAdd" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
+                              <Button layoutX="492.0" layoutY="283.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
+                              <Button layoutX="586.0" layoutY="283.0" mnemonicParsing="false" onAction="#addCustomerDelete" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
+                              <Button layoutX="679.0" layoutY="283.0" mnemonicParsing="false" onAction="#addcustomerClear" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                              <Button layoutX="641.0" layoutY="47.0" mnemonicParsing="false" onAction="#generatePDFCustomer" prefHeight="35.0" prefWidth="127.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Customer Report" />
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="protype_tem_form" layoutX="4.0" layoutY="8.0" prefHeight="740.0" prefWidth="821.0" visible="false">
@@ -1146,29 +1160,29 @@
                               </Label>
                               <AnchorPane layoutX="-2.0" layoutY="116.0" prefHeight="208.0" prefWidth="819.0">
                                  <children>
-                                    <Label layoutX="26.0" layoutY="79.0" text="Product Category" textFill="WHITE">
+                                    <Label layoutX="32.0" layoutY="73.0" text="Product Category" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="26.0" layoutY="127.0" text="Design Name" textFill="WHITE">
+                                    <Label layoutX="32.0" layoutY="121.0" text="Design Name" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="173.0" layoutY="29.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <TextField layoutX="173.0" layoutY="76.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <Button layoutX="510.0" layoutY="58.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="78.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
-                                    <Button layoutX="641.0" layoutY="58.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="78.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
-                                    <Button layoutX="510.0" layoutY="125.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="78.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
-                                    <Button layoutX="641.0" layoutY="125.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="78.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
-                                    <Label layoutX="26.0" layoutY="167.0" text="Description" textFill="WHITE">
+                                    <TextField layoutX="173.0" layoutY="20.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <TextField layoutX="173.0" layoutY="67.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <Button layoutX="510.0" layoutY="60.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
+                                    <Button layoutX="627.0" layoutY="60.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
+                                    <Button layoutX="510.0" layoutY="124.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
+                                    <Button layoutX="627.0" layoutY="124.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                                    <Label layoutX="32.0" layoutY="170.0" text="Description" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="173.0" layoutY="124.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <Label layoutX="26.0" layoutY="33.0" text="Product ID" textFill="WHITE">
+                                    <TextField layoutX="173.0" layoutY="115.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <Label layoutX="32.0" layoutY="26.0" text="Product ID" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
@@ -1176,7 +1190,7 @@
                                     <TextField layoutX="173.0" layoutY="164.0" styleClass="textfield" stylesheets="@dashn.css" />
                                  </children>
                               </AnchorPane>
-                              <TextField layoutX="27.0" layoutY="26.0" prefHeight="32.0" prefWidth="246.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
+                              <TextField layoutX="83.0" layoutY="27.0" prefHeight="32.0" prefWidth="246.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
                               <TableView layoutX="14.0" layoutY="333.0" prefHeight="397.0" prefWidth="800.0">
                                 <columns>
                                   <TableColumn prefWidth="130.0" text="Product ID" />
@@ -1189,35 +1203,36 @@
                         </AnchorPane>
                         <AnchorPane fx:id="accessories_form" layoutX="8.0" layoutY="8.0" prefHeight="741.0" prefWidth="813.0" visible="false">
                            <children>
-                              <Label layoutX="42.0" layoutY="27.0" text="Accessories" textFill="WHITE">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Label>
-                              <AnchorPane layoutX="21.0" layoutY="106.0" prefHeight="208.0" prefWidth="777.0">
+                              <AnchorPane layoutX="21.0" layoutY="26.0" prefHeight="288.0" prefWidth="777.0">
                                  <children>
-                                    <Label layoutX="25.0" layoutY="92.0" text="Accessory Name" textFill="WHITE">
+                                    <Label layoutX="40.0" layoutY="182.0" text="Accessory Name" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="25.0" layoutY="135.0" text="Type" textFill="WHITE">
+                                    <Label layoutX="40.0" layoutY="230.0" text="Type" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="154.0" layoutY="88.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <TextField layoutX="154.0" layoutY="132.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                    <Button layoutX="520.0" layoutY="55.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="77.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
-                                    <Button layoutX="651.0" layoutY="55.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="77.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
-                                    <Button layoutX="520.0" layoutY="130.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="77.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
-                                    <Button layoutX="651.0" layoutY="130.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="77.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
-                                    <Label layoutX="25.0" layoutY="48.0" text="Accessory ID" textFill="WHITE">
+                                    <TextField layoutX="169.0" layoutY="129.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <TextField layoutX="169.0" layoutY="224.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <Button layoutX="485.0" layoutY="140.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
+                                    <Button layoutX="589.0" layoutY="140.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
+                                    <Button layoutX="485.0" layoutY="199.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
+                                    <Button layoutX="589.0" layoutY="199.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                                    <Label layoutX="40.0" layoutY="131.0" text="Accessory ID" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="154.0" layoutY="44.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <TextField layoutX="169.0" layoutY="176.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                    <Label layoutX="40.0" layoutY="46.0" text="Accessories" textFill="WHITE">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField layoutX="72.0" layoutY="14.0" prefHeight="30.0" prefWidth="250.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="14.0" layoutY="335.0" prefHeight="393.0" prefWidth="792.0">
@@ -1231,39 +1246,38 @@
                                     </TableView>
                                  </children>
                               </AnchorPane>
-                              <TextField layoutX="42.0" layoutY="74.0" prefHeight="32.0" prefWidth="290.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="inventory_form" layoutX="8.0" layoutY="14.0" prefHeight="735.0" prefWidth="827.0" visible="false">
+                        <AnchorPane fx:id="inventory_form" layoutX="8.0" layoutY="14.0" prefHeight="733.0" prefWidth="836.0" visible="false">
                            <children>
-                              <TabPane layoutX="28.0" layoutY="79.0" prefHeight="643.0" prefWidth="792.0" tabClosingPolicy="UNAVAILABLE">
+                              <TabPane layoutX="28.0" layoutY="79.0" prefHeight="643.0" prefWidth="787.0" tabClosingPolicy="UNAVAILABLE">
                                 <tabs>
                                   <Tab text="Category">
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <Label layoutX="27.0" layoutY="184.0" text="Category Name" textFill="WHITE">
+                                                <Label layoutX="28.0" layoutY="188.0" text="Category Name" textFill="WHITE">
                                                    <font>
                                                       <Font size="15.0" />
                                                    </font>
                                                 </Label>
-                                                <TableView fx:id="tableInvCat" layoutX="381.0" layoutY="106.0" prefHeight="470.0" prefWidth="384.0">
+                                                <TableView fx:id="tableInvCat" layoutX="396.0" layoutY="107.0" prefHeight="470.0" prefWidth="384.0">
                                                   <columns>
                                                     <TableColumn fx:id="colInvCatId" prefWidth="176.0" text="Category ID" />
                                                     <TableColumn fx:id="colInvCatName" prefWidth="201.0" text="Category Name" />
                                                   </columns>
                                                 </TableView>
-                                                <TextField fx:id="txtInvCatName" layoutX="193.0" layoutY="181.0" styleClass="textfield" stylesheets="@dashn.css" />
-                                                <Button fx:id="btnInvCatAdd" layoutX="56.0" layoutY="258.0" mnemonicParsing="false" onAction="#addInvCat" prefHeight="52.0" prefWidth="78.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
-                                                <Button fx:id="btnInvCatDelete" layoutX="259.0" layoutY="258.0" mnemonicParsing="false" onAction="#deleteInvCat" prefHeight="45.0" prefWidth="82.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
-                                                <Button fx:id="btnInvCatUpdate" layoutX="54.0" layoutY="333.0" mnemonicParsing="false" onAction="#updateInvCat" prefHeight="49.0" prefWidth="83.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
-                                                <Button fx:id="btnInvCatClear" layoutX="259.0" layoutY="333.0" mnemonicParsing="false" onAction="#clearInvCat" prefHeight="45.0" prefWidth="82.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
-                                                <Label layoutX="269.0" layoutY="22.0" text="Inventory Category" textFill="WHITE">
+                                                <TextField fx:id="txtInvCatName" layoutX="157.0" layoutY="182.0" styleClass="textfield" stylesheets="@dashn.css" />
+                                                <Button fx:id="btnInvCatAdd" layoutX="153.0" layoutY="306.0" mnemonicParsing="false" onAction="#addInvCat" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Add" />
+                                                <Button fx:id="btnInvCatDelete" layoutX="153.0" layoutY="383.0" mnemonicParsing="false" onAction="#deleteInvCat" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Delete" />
+                                                <Button fx:id="btnInvCatUpdate" layoutX="259.0" layoutY="306.0" mnemonicParsing="false" onAction="#updateInvCat" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Update" />
+                                                <Button fx:id="btnInvCatClear" layoutX="259.0" layoutY="383.0" mnemonicParsing="false" onAction="#clearInvCat" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" stylesheets="@dashn.css" text="Clear" />
+                                                <Label layoutX="284.0" layoutY="24.0" text="Inventory Category" textFill="WHITE">
                                                    <font>
                                                       <Font size="28.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField layoutX="27.0" layoutY="65.0" prefHeight="32.0" prefWidth="245.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
+                                                <TextField fx:id="txtSearchInvCat" layoutX="28.0" layoutY="107.0" prefHeight="30.0" prefWidth="250.0" promptText="Search" styleClass="ctsearch" stylesheets="@dashn.css" />
                                              </children>
                                           </AnchorPane>
                                     </content>
@@ -1272,49 +1286,50 @@
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <TextField layoutX="21.0" layoutY="51.0" prefHeight="28.0" prefWidth="225.0" promptText="Search" styleClass="ctsearch" />
+                                                <TextField fx:id="txtSearchInvType" layoutX="30.0" layoutY="48.0" prefHeight="28.0" prefWidth="225.0" promptText="Search" styleClass="ctsearch" />
                                                 <Label layoutX="270.0" layoutY="14.0" text="Inventory Type" textFill="WHITE">
                                                    <font>
                                                       <Font size="28.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="21.0" layoutY="150.0" text="Category" textFill="WHITE">
+                                                <Label layoutX="30.0" layoutY="103.0" text="Category" textFill="WHITE">
                                                    <font>
                                                       <Font size="15.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="txtInvTypeCategory" layoutX="110.0" layoutY="147.0" styleClass="textfield" />
-                                                <Label layoutX="21.0" layoutY="197.0" text="Name" textFill="WHITE">
+                                                <Label layoutX="30.0" layoutY="150.0" text="Name" textFill="WHITE">
                                                    <font>
                                                       <Font size="15.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="txtInvTypeName" layoutX="110.0" layoutY="194.0" styleClass="textfield" />
-                                                <Label layoutX="406.0" layoutY="99.0" text="Status" textFill="WHITE">
+                                                <TextField fx:id="txtInvTypeName" layoutX="135.0" layoutY="147.0" styleClass="textfield" />
+                                                <Label layoutX="379.0" layoutY="103.0" text="Status" textFill="WHITE">
                                                    <font>
                                                       <Font size="15.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="txtInvTypeStatus" layoutX="489.0" layoutY="96.0" styleClass="textfield" />
-                                                <Label layoutX="411.0" layoutY="150.0" text="Quantity" textFill="WHITE">
+                                                <TextField fx:id="txtInvTypeStatus" layoutX="464.0" layoutY="97.0" styleClass="textfield" />
+                                                <Label layoutX="379.0" layoutY="150.0" text="Quantity" textFill="WHITE">
                                                    <font>
                                                       <Font size="15.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="txtInvTypeQty" layoutX="489.0" layoutY="147.0" styleClass="textfield" />
-                                                <TableView fx:id="tableInvType" layoutX="14.0" layoutY="240.0" prefHeight="357.0" prefWidth="770.0">
+                                                <TextField fx:id="txtInvTypeQty" layoutX="464.0" layoutY="147.0" styleClass="textfield" />
+                                                <TableView fx:id="tableInvType" layoutX="6.0" layoutY="244.0" prefHeight="357.0" prefWidth="770.0">
                                                   <columns>
-                                                    <TableColumn fx:id="colInvTypeId" prefWidth="75.0" text="ID" />
-                                                    <TableColumn fx:id="colInvTypeCat" prefWidth="225.0" text="Category" />
-                                                      <TableColumn fx:id="colInvTypeName" prefWidth="196.0" text="Name" />
-                                                      <TableColumn fx:id="colInvTypeStatus" prefWidth="157.0" text="Status" />
-                                                      <TableColumn fx:id="colInvTypeQty" prefWidth="113.0" text="QTY" />
+                                                    <TableColumn fx:id="colInvTypeId" prefWidth="96.0" text="ID" />
+                                                    <TableColumn fx:id="colInvTypeCat" prefWidth="194.0" text="Category" />
+                                                      <TableColumn fx:id="colInvTypeName" prefWidth="197.0" text="Name" />
+                                                      <TableColumn fx:id="colInvTypeStatus" prefWidth="158.0" text="Status" />
+                                                      <TableColumn fx:id="colInvTypeQty" prefWidth="121.0" text="QTY" />
                                                   </columns>
                                                 </TableView>
-                                                <Button fx:id="btnInvTypeAdd" layoutX="393.0" layoutY="204.0" mnemonicParsing="false" onAction="#addInvType" prefHeight="26.0" prefWidth="68.0" styleClass="ctbuttons" text="Add" />
-                                                <Button fx:id="btnInvTypeUpdate" layoutX="472.0" layoutY="204.0" mnemonicParsing="false" onAction="#updateInvType" prefHeight="26.0" prefWidth="73.0" styleClass="ctbuttons" text="Update" />
-                                                <Button fx:id="btnInvTypeClear" layoutX="650.0" layoutY="203.0" mnemonicParsing="false" onAction="#clearInvType" prefHeight="26.0" prefWidth="72.0" styleClass="ctbuttons" text="Clear" />
-                                                <Button fx:id="btnInvTypeDelete" layoutX="559.0" layoutY="203.0" mnemonicParsing="false" onAction="#deleteInvType" prefHeight="26.0" prefWidth="80.0" styleClass="ctbuttons" text="Delete" />
+                                                <Button fx:id="btnInvTypeAdd" layoutX="380.0" layoutY="186.0" mnemonicParsing="false" onAction="#addInvType" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" text="Add" />
+                                                <Button fx:id="btnInvTypeUpdate" layoutX="474.0" layoutY="186.0" mnemonicParsing="false" onAction="#updateInvType" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" text="Update" />
+                                                <Button fx:id="btnInvTypeClear" layoutX="662.0" layoutY="186.0" mnemonicParsing="false" onAction="#clearInvType" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" text="Clear" />
+                                                <Button fx:id="btnInvTypeDelete" layoutX="568.0" layoutY="186.0" mnemonicParsing="false" onAction="#deleteInvType" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" text="Delete" />
+                                                <ComboBox fx:id="invCatComboBox" layoutX="134.0" layoutY="99.0" prefHeight="26.0" prefWidth="163.0" />
+                                                <Button layoutX="641.0" layoutY="47.0" mnemonicParsing="false" onAction="#generatePDFInv" prefHeight="35.0" prefWidth="127.0" text="Generate PDF" />
                                              </children>
                                           </AnchorPane>
                                     </content>
@@ -1330,12 +1345,12 @@
                         </AnchorPane>
                         <AnchorPane fx:id="openingbalances_form" layoutX="4.0" prefHeight="749.0" prefWidth="828.0" visible="false">
                            <children>
-                              <Label layoutX="67.0" layoutY="65.0" text="Opening Balances" textFill="#fffbfb">
+                              <Label layoutX="65.0" layoutY="46.0" text="Opening Balances" textFill="#fffbfb">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
                               </Label>
-                              <AnchorPane layoutX="24.0" layoutY="120.0" prefHeight="607.0" prefWidth="797.0">
+                              <AnchorPane layoutX="16.0" layoutY="101.0" prefHeight="607.0" prefWidth="797.0">
                                  <children>
                                     <RadioButton layoutX="66.0" layoutY="38.0" mnemonicParsing="false" text="Customer" textFill="WHITE">
                                        <toggleGroup>
@@ -1363,7 +1378,7 @@
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Line endX="88.5" layoutX="196.0" layoutY="168.0" startX="-91.5" stroke="WHITE" />
+                                    <Line endX="78.5" layoutX="196.0" layoutY="168.0" startX="-91.5" stroke="WHITE" />
                                     <Line endX="19.5" layoutX="24.0" layoutY="168.0" startX="-14.5" stroke="WHITE" />
                                     <Label layoutX="423.0" layoutY="155.0" prefHeight="26.0" prefWidth="48.0" text="Gold" textFill="WHITE">
                                        <font>
@@ -1383,12 +1398,12 @@
                                     </RadioButton>
                                     <RadioButton layoutX="507.0" layoutY="191.0" mnemonicParsing="false" text="Credit" textFill="WHITE" toggleGroup="$Gold" />
                                     <Label layoutX="20.0" layoutY="229.0" text="Amount" textFill="WHITE" />
-                                    <TextField layoutX="104.0" layoutY="225.0" />
+                                    <TextField layoutX="104.0" layoutY="225.0" styleClass="textfield" />
                                     <Label layoutX="359.0" layoutY="232.0" text="Weight" textFill="WHITE" />
-                                    <TextField layoutX="427.0" layoutY="225.0" />
-                                    <Button layoutX="644.0" layoutY="79.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="88.0" text="Add" />
-                                    <Button layoutX="644.0" layoutY="149.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="88.0" text="Update" />
-                                    <Button layoutX="644.0" layoutY="218.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="88.0" text="Clear" />
+                                    <TextField layoutX="427.0" layoutY="225.0" styleClass="textfield" />
+                                    <Button layoutX="644.0" layoutY="98.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" text="Add" />
+                                    <Button layoutX="644.0" layoutY="159.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" text="Update" />
+                                    <Button layoutX="644.0" layoutY="218.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="85.0" styleClass="ctbuttons" text="Clear" />
                                     <TableView layoutX="14.0" layoutY="270.0" prefHeight="331.0" prefWidth="773.0">
                                       <columns>
                                         <TableColumn prefWidth="158.0" text="Category" />
@@ -1399,12 +1414,13 @@
                                           <TableColumn prefWidth="104.0" text=" C Weight" />
                                       </columns>
                                     </TableView>
+                                    <TextField layoutX="114.0" layoutY="94.0" styleClass="textfield" />
                                  </children>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
                      </children></AnchorPane>
-               </center>
+               </right>
             </BorderPane>
          </children>
       </AnchorPane>

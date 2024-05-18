@@ -5,11 +5,21 @@ import java.util.Date;
 
 
 public class CashTransaction {
+
+    private int CTID;
     private String CTName;
     private int CTAmount;
     private String CTType;
     private LocalDate CTDate;
     private String CTRole;
+
+    public int getCTID() {
+        return CTID;
+    }
+
+    public void setCTID(int CTID) {
+        this.CTID = CTID;
+    }
 
     public String getCTName() {
         return CTName;

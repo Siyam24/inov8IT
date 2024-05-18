@@ -1,7 +1,5 @@
 package Models;
 
-import javafx.beans.property.StringProperty;
-
 public class InventoryCategory {
     private String id;
     private String name;
@@ -30,12 +28,5 @@ public class InventoryCategory {
         this.name = name;
     }
 
-    public String idProperty(){
-        return id;
-    }
-
-    public String nameProperty(){
-        return name;
-    }
 
 }

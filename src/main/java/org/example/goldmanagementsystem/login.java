@@ -16,7 +16,6 @@ import java.io.IOException;
 
 public class login {
     public login(){
-
     }
     @FXML
     private Button sbutton;
